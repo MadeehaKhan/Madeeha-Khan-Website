@@ -1,0 +1,6 @@
+@mksite.Server_HostAddress = http://localhost:5076
+
+GET {{mksite.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

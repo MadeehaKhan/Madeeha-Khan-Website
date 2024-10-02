@@ -1,0 +1,27 @@
+.sidebarNav-link {
+  color: #230215;
+  font-family: Cambria, Georgia, serif;
+}
+
+.sidebarNav-link:hover {
+  color: #efecca;
+}
+
+.sidebarNav {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebarNav-link:focus {
+  color: #aa8e98 !important;
+}
+
+.sidebarNav:active {
+  color: #aa8e98 !important;
+}
+
+.sideBarElements {
+  padding: 10px;
+  border-style: dashed;
+}
