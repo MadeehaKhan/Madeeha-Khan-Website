@@ -1,6 +1,7 @@
 import { Container, Row, Accordion } from "react-bootstrap";
 import resume from "../dicitonaries/resume.json";
 import { ListItem } from "./SharedComponents";
+import {getRelevantExperience as experience }  from "./../services/ResumeEndpoint";
 
 //TODO: add styling
 //TODO: add user prompt to contact after viewing resume
@@ -23,9 +24,15 @@ type Experience = {
 };
 
 const ExperienceFrame = (props: ExperienceProps) => {
+  const values = experience();
+  console.log("Values")
+  console.log(values.then(() => {
+    
+  }));
   return (
     <>
-      {props.experience.map((item: Experience, i) => {
+      {
+      props.experience.map((item: Experience, i) => {
         let { title, timing, description, duties, organization } = item;
         return (
           <Container key={i}>
