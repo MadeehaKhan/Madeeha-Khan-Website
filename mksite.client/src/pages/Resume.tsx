@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container, Nav, Row } from "react-bootstrap";
 import { ResumeFrame } from "../components/ResumeFrame";
 import { useState } from "react";
 
-
 export const Resume = () => {
   //TODO: style nav
-  const [resumeControl, setResumeControl] = useState("");
+  const [resumeControl, setResumeControl] = useState("programming");
 
   const handleTab = (eventKey: any) => {
-    if (eventKey != resumeControl) setResumeControl(eventKey);
+    setResumeControl(eventKey);
   };
 
   //TODO: add link to pdf of full resume

@@ -6,14 +6,13 @@ import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
 import { HomePage } from "../pages/HomePage";
 
-
 const BaseComponent = () => {
   //controls to display middle element
   const [activePage, setActivePage] = useState("Home");
   const links = ["Home", "Resume", "About", "Contact"];
 
   const navigateContent = (page: string) => {
-    console.log(`going from ${activePage} to ${page}!`);
+    //console.log(`going from ${activePage} to ${page}!`);
     setActivePage(page);
   };
 

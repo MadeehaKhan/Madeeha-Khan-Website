@@ -1,7 +1,7 @@
 import { Container, Row, Accordion } from "react-bootstrap";
 import resume from "../dicitonaries/resume.json";
 import { ListItem } from "./SharedComponents";
-import {getRelevantExperience as experience }  from "./../services/ResumeEndpoint";
+import { getRelevantExperience as experience } from "../services/ResumeService";
 
 //TODO: add styling
 //TODO: add user prompt to contact after viewing resume
@@ -10,30 +10,27 @@ type FrameProps = {
   type: string;
 };
 
-type ExperienceProps = {
-  experience: Experience[];
-};
+ type ExperienceProps = {
+   experience: Experience[];
+   type: string;
+ };
 
-type Experience = {
-  title: string;
-  duties: string;
-  timing: string;
-  description: string[];
-  organization: string;
-  link?: string;
-};
+ type Experience = {
+   title: string;
+   duties: string;
+   timing: string;
+   description: string[];
+   organization: string;
+   link?: string;
+ };
 
 const ExperienceFrame = (props: ExperienceProps) => {
-  const values = experience();
-  console.log("Values")
-  console.log(values.then(() => {
-    
-  }));
+  const values = experience(`/experience/${props.type}`);
+  console.log(values);
   return (
     <>
-      {
-      props.experience.map((item: Experience, i) => {
-        let { title, timing, description, duties, organization } = item;
+      {props.experience.map((item: Experience, i: number) => {
+        const { title, timing, description, duties, organization } = item;
         return (
           <Container key={i}>
             <Row>
@@ -57,8 +54,8 @@ const ExperienceFrame = (props: ExperienceProps) => {
 };
 
 export const ResumeFrame = (props: FrameProps) => {
-  let { type } = props;
-  let object = type == "teaching" ? resume.teaching : resume.programming;
+  const { type } = props;
+  const object = type == "teaching" ? resume.teaching : resume.programming;
   return object == resume.programming ? (
     <Accordion defaultActiveKey="0">
       <Row>
@@ -72,7 +69,10 @@ export const ResumeFrame = (props: FrameProps) => {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Relevant Experience</Accordion.Header>
           <Accordion.Body>
-            <ExperienceFrame experience={object.experience}></ExperienceFrame>
+            <ExperienceFrame
+              experience={object.experience}
+              type={type}
+            ></ExperienceFrame>
           </Accordion.Body>
         </Accordion.Item>
         <Row></Row>
@@ -101,7 +101,10 @@ export const ResumeFrame = (props: FrameProps) => {
       <Row></Row>
       <Row>
         <h3>Relevant Experience</h3>
-        <ExperienceFrame experience={object.experience}></ExperienceFrame>
+        <ExperienceFrame
+          experience={object.experience}
+          type={type}
+        ></ExperienceFrame>
       </Row>
       <Row></Row>
     </Container>
