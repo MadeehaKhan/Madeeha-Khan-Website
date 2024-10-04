@@ -1,50 +1,47 @@
 import { Container, Row, Accordion } from "react-bootstrap";
-import resume from "../dicitonaries/resume.json";
 import { ListItem } from "./SharedComponents";
-import { getRelevantExperience as experience } from "../services/ResumeService";
-
+import {
+  ExperienceListModel,
+  ExperienceModel,
+} from "../models/ExperienceModel";
 //TODO: add styling
 //TODO: add user prompt to contact after viewing resume
 
 type FrameProps = {
   type: string;
+  experience: ExperienceModel | null;
 };
 
- type ExperienceProps = {
-   experience: Experience[];
-   type: string;
- };
-
- type Experience = {
-   title: string;
-   duties: string;
-   timing: string;
-   description: string[];
-   organization: string;
-   link?: string;
- };
+type ExperienceProps = {
+  experience: ExperienceListModel[];
+};
 
 const ExperienceFrame = (props: ExperienceProps) => {
-  const values = experience(`/experience/${props.type}`);
-  console.log(values);
   return (
     <>
-      {props.experience.map((item: Experience, i: number) => {
-        const { title, timing, description, duties, organization } = item;
+      {props.experience.map((item: ExperienceListModel) => {
+        const {
+          id,
+          organization,
+          role,
+          duration,
+          generalDescription,
+          itemizedDescription,
+        } = item;
         return (
-          <Container key={i}>
+          <Container key={id}>
             <Row>
               <h5> {organization}</h5>{" "}
             </Row>
             <Row>
               <dl className="dl-horizontal">
-                <dt>{title}</dt>
-                <dd>{timing}</dd>
+                <dt>{role}</dt>
+                <dd>{duration}</dd>
               </dl>
             </Row>
-            <Row>{duties}</Row>
+            <Row>{generalDescription}</Row>
             <Row>
-              <ul>{description.map(ListItem)}</ul>
+              <ul>{itemizedDescription.map(ListItem)}</ul>
             </Row>
           </Container>
         );
@@ -54,59 +51,60 @@ const ExperienceFrame = (props: ExperienceProps) => {
 };
 
 export const ResumeFrame = (props: FrameProps) => {
-  const { type } = props;
-  const object = type == "teaching" ? resume.teaching : resume.programming;
-  return object == resume.programming ? (
-    <Accordion defaultActiveKey="0">
-      <Row>
-        <h2>{object.heading.title}</h2>
-      </Row>
-      <Row>
-        <p>{object.heading.intro}</p>
-      </Row>
-      <Row></Row>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Relevant Experience</Accordion.Header>
-          <Accordion.Body>
+  const { type, experience } = props;
+  console.log({ experience });
+  if (!experience) return <h1>AHHHHHH</h1>;
+  return (
+    <>
+      {type == "programming" ? (
+        <Accordion defaultActiveKey="0">
+          <Row>
+            <h2>{experience.title}</h2>
+          </Row>
+          <Row>
+            <p>{experience.introduction}</p>
+          </Row>
+          <Row></Row>
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Relevant Experience</Accordion.Header>
+              <Accordion.Body>
+                <ExperienceFrame
+                  experience={experience.experienceList}
+                ></ExperienceFrame>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Row></Row>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Core Competencies</Accordion.Header>
+              <Accordion.Body>
+                <ul className="list-unstyled">{["", ""].map(ListItem)}</ul>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>Certifications</Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Accordion>
+      ) : (
+        <Container>
+          <Row>
+            <h2>{experience.title}</h2>
+          </Row>
+          <Row>
+            <p>{experience.introduction}</p>
+          </Row>
+          <Row></Row>
+          <Row>
+            <h3>Relevant Experience</h3>
             <ExperienceFrame
-              experience={object.experience}
-              type={type}
+              experience={experience.experienceList}
             ></ExperienceFrame>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Row></Row>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Core Competencies</Accordion.Header>
-          <Accordion.Body>
-            <ul className="list-unstyled">
-              {object.coreCompetencies.map(ListItem)}
-            </ul>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Certifications</Accordion.Header>
-          <Accordion.Body></Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-    </Accordion>
-  ) : (
-    <Container>
-      <Row>
-        <h2>{object.heading.title}</h2>
-      </Row>
-      <Row>
-        <p>{object.heading.intro}</p>
-      </Row>
-      <Row></Row>
-      <Row>
-        <h3>Relevant Experience</h3>
-        <ExperienceFrame
-          experience={object.experience}
-          type={type}
-        ></ExperienceFrame>
-      </Row>
-      <Row></Row>
-    </Container>
+          </Row>
+          <Row></Row>
+        </Container>
+      )}
+    </>
   );
 };

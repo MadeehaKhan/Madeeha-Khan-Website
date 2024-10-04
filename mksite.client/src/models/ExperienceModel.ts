@@ -1,9 +1,16 @@
 export type ExperienceListModel = {
-    Id: number,
-    Organization: string,
-    Role: string, 
-    Duration: string,
-    GeneralDescription: string,
-    ItemizedDescription: string,
-    Link?: string
+    id: number,
+    organization: string,
+    role: string, 
+    duration: string,
+    generalDescription: string,
+    itemizedDescription: string[],
+    link?: string
+}
+
+export type ExperienceModel = {
+    title: string;
+    introduction: string;
+    coreCompetencies: string[];
+    experienceList: ExperienceListModel[];
 }
