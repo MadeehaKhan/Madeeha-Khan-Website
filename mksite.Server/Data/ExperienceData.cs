@@ -189,5 +189,6 @@ class ExperienceData
             Title = "Software Developer",
             Introduction = "",
             ExperienceList = ProgrammingExperienceList,
+            CoreCompetencies = ["React", "Angular"],
         };
 }

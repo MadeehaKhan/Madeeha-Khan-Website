@@ -21,11 +21,7 @@ export const Resume = () => {
 
   const handleTab = (eventKey: string | null) => {
     if (eventKey && eventKey != resumeControl) {
-      setResumeControl(eventKey);
-      experience<ExperienceModel>(`/experience/${resumeControl}`).then(
-        (results) => setExperienceData(results)
-      );
-    }
+      setResumeControl(eventKey);}
   };
 
   //TODO: add link to pdf of full resume

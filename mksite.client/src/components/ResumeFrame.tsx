@@ -78,7 +78,9 @@ export const ResumeFrame = (props: FrameProps) => {
             <Accordion.Item eventKey="1">
               <Accordion.Header>Core Competencies</Accordion.Header>
               <Accordion.Body>
-                <ul className="list-unstyled">{["", ""].map(ListItem)}</ul>
+                <ul className="list-unstyled">
+                  {experience.coreCompetencies?.map(ListItem)}
+                </ul>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2">
