@@ -1,4 +1,4 @@
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { Resume } from "../pages/Resume";
 import { Sidebar } from "./Sidebar";
 import { useState } from "react";
@@ -29,16 +29,25 @@ const BaseComponent = () => {
     }
   };
 
+  const colStyle = {
+    paddingLeft: "0",
+    paddingRight: "0",
+  };
+
   return (
-    <Container fluid="md">
-      <Col>
-        <Sidebar
-          handlePageChange={navigateContent}
-          currentPage={activePage}
-          links={links}
-        ></Sidebar>
-      </Col>
-      <Col md="7">{renderSwitch(activePage)}</Col>
+    <Container>
+      <Row>
+        <Col></Col>
+        <Col md="2">
+          <Sidebar
+            handlePageChange={navigateContent}
+            currentPage={activePage}
+            links={links}
+          ></Sidebar>
+        </Col>
+        <Col md="8">{renderSwitch(activePage)}</Col>
+        <Col style={activePage == "Resume" ? colStyle : {}}></Col>
+      </Row>
     </Container>
   );
 };

@@ -4,6 +4,7 @@ import {
   ExperienceListModel,
   ExperienceModel,
 } from "../models/ExperienceModel";
+import styles from "../assets/ResumeFrame.module.css";
 //TODO: add styling
 //TODO: add user prompt to contact after viewing resume
 
@@ -52,42 +53,40 @@ const ExperienceFrame = (props: ExperienceProps) => {
 
 export const ResumeFrame = (props: FrameProps) => {
   const { type, experience } = props;
-  console.log({ experience });
+  //TODO: real error handling
   if (!experience) return <h1>AHHHHHH</h1>;
   return (
     <>
       {type == "programming" ? (
-        <Accordion defaultActiveKey="0">
-          <Row>
+        <Accordion
+          defaultActiveKey="0"
+          className={`${styles["resumeAccordion"]}`}
+        >
+          <Row className={`${styles["resumeHeader"]}`}>
             <h2>{experience.title}</h2>
-          </Row>
-          <Row>
             <p>{experience.introduction}</p>
           </Row>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Relevant Experience</Accordion.Header>
+            <Accordion.Body>
+              <ExperienceFrame
+                experience={experience.experienceList}
+              ></ExperienceFrame>
+            </Accordion.Body>
+          </Accordion.Item>
           <Row></Row>
-          <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>Relevant Experience</Accordion.Header>
-              <Accordion.Body>
-                <ExperienceFrame
-                  experience={experience.experienceList}
-                ></ExperienceFrame>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Row></Row>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>Core Competencies</Accordion.Header>
-              <Accordion.Body>
-                <ul className="list-unstyled">
-                  {experience.coreCompetencies?.map(ListItem)}
-                </ul>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>Certifications</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Core Competencies</Accordion.Header>
+            <Accordion.Body>
+              <ul className="list-unstyled">
+                {experience.coreCompetencies?.map(ListItem)}
+              </ul>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Certifications</Accordion.Header>
+            <Accordion.Body></Accordion.Body>
+          </Accordion.Item>
         </Accordion>
       ) : (
         <Container>

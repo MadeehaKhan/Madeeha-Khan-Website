@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Nav } from "react-bootstrap";
 import styles from "../assets/Sidebar.module.css";
-import { LinkListItem } from "./SharedComponents";
 
 type SidebarProps = {
   currentPage: string;
@@ -27,7 +26,17 @@ export const Sidebar = (props: SidebarProps) => {
       className={`flex-column ${styles["sidebarNav"]}`}
     >
       <div className={`${styles.sideBarElements}`}>
-        {links.map((link) => LinkListItem(styles["sidebarNav-link"], link))}
+        {links.map((link) => {
+          return (
+            <Nav.Link
+              className={`${styles["sidebarNav-link"]}`}
+              eventKey={link}
+              key={link}
+            >
+              {link.toLowerCase()}
+            </Nav.Link>
+          );
+        })}
       </div>
     </Nav>
   );

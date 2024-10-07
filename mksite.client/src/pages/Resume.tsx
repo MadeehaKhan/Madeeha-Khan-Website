@@ -1,4 +1,4 @@
-import { Container, Nav, Row } from "react-bootstrap";
+import { Col, Nav } from "react-bootstrap";
 import { ResumeFrame } from "../components/ResumeFrame";
 import { useEffect, useState } from "react";
 import { getRelevantExperience as experience } from "../services/ResumeService";
@@ -21,24 +21,23 @@ export const Resume = () => {
 
   const handleTab = (eventKey: string | null) => {
     if (eventKey && eventKey != resumeControl) {
-      setResumeControl(eventKey);}
+      setResumeControl(eventKey);
+    }
   };
 
   //TODO: add link to pdf of full resume
   return (
-    <Container>
-      <Nav
-        variant="unerline"
-        defaultActiveKey={resumeControl}
-        onSelect={(eventKey) => handleTab(eventKey)}
-      >
-        <Nav.Item>
-          <Nav.Link eventKey="programming">Developer</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="teaching">Teacher</Nav.Link>
-        </Nav.Item>
-      </Nav>
+    <Nav
+      variant="unerline"
+      defaultActiveKey={resumeControl}
+      onSelect={(eventKey) => handleTab(eventKey)}
+    >
+      <Nav.Item>
+        <Nav.Link eventKey="programming">Developer</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="teaching">Teacher</Nav.Link>
+      </Nav.Item>
       {experienceData ? (
         <ResumeFrame
           type={resumeControl}
@@ -47,7 +46,6 @@ export const Resume = () => {
       ) : (
         <Loader></Loader>
       )}
-      <Row></Row>
-    </Container>
+    </Nav>
   );
 };

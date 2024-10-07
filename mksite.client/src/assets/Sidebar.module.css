@@ -1,19 +1,19 @@
 .sidebarNav-link {
-  color: #230215;
+  color: #230215 !important;
   font-family: Cambria, Georgia, serif;
+  padding: 3px;
+  margin: 0;
 }
 
 .sidebarNav-link:hover {
   color: #efecca;
 }
 
-.sidebarNav {
-  height: 250px;
-  display: flex;
-  justify-content: center;
+.sidebarNav-link:focus {
+  color: #aa8e98 !important;
 }
 
-.sidebarNav-link:focus {
+.sidebarNav-link:hover {
   color: #aa8e98 !important;
 }
 
@@ -24,4 +24,5 @@
 .sideBarElements {
   padding: 10px;
   border-style: dashed;
+  vertical-align: middle;
 }
