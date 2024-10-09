@@ -9,6 +9,11 @@ namespace mksite.Server.Controllers;
 public class ExperienceController : ControllerBase
 {
     private ExperienceData Experience = new();
+     private readonly ILogger<AboutController> _logger;
+
+     public ExperienceController(ILogger<AboutController> logger) {
+        _logger = logger;
+     }
 
     [HttpGet("{type}")]
     public ExperienceModel Get(string type)

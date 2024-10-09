@@ -1,9 +1,10 @@
-import { Col, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { ResumeFrame } from "../components/ResumeFrame";
 import { useEffect, useState } from "react";
 import { getRelevantExperience as experience } from "../services/ResumeService";
 import { ExperienceModel } from "../models/ExperienceModel";
 import { Loader } from "../components/SharedComponents";
+import style from "../assets/Resume.module.css";
 
 export const Resume = () => {
   //TODO: style nav
@@ -25,18 +26,25 @@ export const Resume = () => {
     }
   };
 
-  //TODO: add link to pdf of full resume
   return (
     <Nav
-      variant="unerline"
+      variant="underline"
       defaultActiveKey={resumeControl}
       onSelect={(eventKey) => handleTab(eventKey)}
+      className={`${style["resumeNav"]}`}
     >
       <Nav.Item>
-        <Nav.Link eventKey="programming">Developer</Nav.Link>
+        <Nav.Link
+          eventKey="programming"
+          className={`${style["resumeNav-link"]}`}
+        >
+          Developer
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="teaching">Teacher</Nav.Link>
+        <Nav.Link eventKey="teaching" className={`${style["resumeNav-link"]}`}>
+          Teacher
+        </Nav.Link>
       </Nav.Item>
       {experienceData ? (
         <ResumeFrame

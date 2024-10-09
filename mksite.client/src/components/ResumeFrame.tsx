@@ -32,18 +32,20 @@ const ExperienceFrame = (props: ExperienceProps) => {
         return (
           <Container key={id}>
             <Row>
-              <h5> {organization}</h5>{" "}
+              <h5 className={`${styles["experienceHeader"]}`}> {organization}</h5>{" "}
             </Row>
             <Row>
-              <dl className="dl-horizontal">
+              <dl className={`dl-horizontal`}>
                 <dt>{role}</dt>
                 <dd>{duration}</dd>
               </dl>
             </Row>
-            <Row>{generalDescription}</Row>
-            <Row>
+            <div className={`${styles['description']}`}>
+            <p className={`${styles['genDescription']}`}>{generalDescription}</p>
+            <Row className={`${styles['itemDescription']}`}>
               <ul>{itemizedDescription.map(ListItem)}</ul>
             </Row>
+            </div>
           </Container>
         );
       })}
@@ -51,6 +53,7 @@ const ExperienceFrame = (props: ExperienceProps) => {
   );
 };
 
+//TODO: add link to pdf of full resume
 export const ResumeFrame = (props: FrameProps) => {
   const { type, experience } = props;
   //TODO: real error handling
@@ -67,7 +70,7 @@ export const ResumeFrame = (props: FrameProps) => {
             <p>{experience.introduction}</p>
           </Row>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Relevant Experience</Accordion.Header>
+            <Accordion.Header className={`${styles["accordionHeader"]}`}>Relevant Experience</Accordion.Header>
             <Accordion.Body>
               <ExperienceFrame
                 experience={experience.experienceList}
@@ -76,7 +79,7 @@ export const ResumeFrame = (props: FrameProps) => {
           </Accordion.Item>
           <Row></Row>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>Core Competencies</Accordion.Header>
+            <Accordion.Header className={`${styles["accordionHeader"]}`}>Core Competencies</Accordion.Header>
             <Accordion.Body>
               <ul className="list-unstyled">
                 {experience.coreCompetencies?.map(ListItem)}
@@ -84,7 +87,7 @@ export const ResumeFrame = (props: FrameProps) => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
-            <Accordion.Header>Certifications</Accordion.Header>
+            <Accordion.Header className={`${styles["accordionHeader"]}`}>Certifications</Accordion.Header>
             <Accordion.Body></Accordion.Body>
           </Accordion.Item>
         </Accordion>

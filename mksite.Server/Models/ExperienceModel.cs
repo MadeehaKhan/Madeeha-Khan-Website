@@ -18,3 +18,10 @@ public class ExperienceModel {
     public string[]? CoreCompetencies { get; set; }
 
  }
+
+ public class CompetencyModel {
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Url { get; set; } 
+    public string Details { get; set; } 
+ }

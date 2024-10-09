@@ -2,6 +2,48 @@
   width: 100%;
 }
 
+.experienceHeader {
+  background-color: rgba(35, 2, 21 ,0.3);
+  color: rgb(12, 9, 13);
+  padding: 3px;
+}
+
 .resumeHeader {
   width: 100%;
+  font-family: Consolas, monaco, monospace;
+}
+
+.accordionHeader button {
+  /* active,  active-bg, hover*/
+  background-color: #c20a72c1 !important;
+  color: #091943 !important;
+  font-family: Consolas, monaco, monospace;
+}
+
+.accordionHeader button:focus {
+  /* active,  active-bg, hover*/
+  background-color: #c20a72 !important;
+  color: #fff2c5;
+  font-family: Consolas, monaco, monospace;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+dd {
+  font-style: italic;
+}
+
+.description {
+  text-align: left;
+}
+
+.genDescription {
+  padding-bottom: 5px;
+}
+
+.itemDescription li {
+  padding-bottom: 5px;
 }

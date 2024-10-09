@@ -50,6 +50,10 @@ export default defineConfig({
             '^/experience':{
                 target,
                 secure: false
+            },
+            '^/about':{
+                target,
+                secure: false
             }
         },
         port: 5173,

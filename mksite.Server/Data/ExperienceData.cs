@@ -40,7 +40,7 @@ class ExperienceData
         {
             Id = 3,
             Organization = "TATA Consultancy Services (TCS)",
-            Role = "Frontend Lead Developer",
+            Role = "Lead Developer",
             Duration = "Jan 2020 - June 2021",
             GeneralDescription =
                 "Providing customers across 55 countries with IT services, consulting, and business solutions.",
@@ -179,7 +179,8 @@ class ExperienceData
         new()
         {
             Title = "Teacher",
-            Introduction = "",
+            Introduction =
+                "Over 12 years of experience in lesson planning, teaching, and development.",
             ExperienceList = TeachingExperienceList,
         };
 
@@ -187,7 +188,8 @@ class ExperienceData
         new()
         {
             Title = "Software Developer",
-            Introduction = "",
+            Introduction =
+                "Fullstack engineer with experience in React, Angular, .NET, and Node.js.",
             ExperienceList = ProgrammingExperienceList,
             CoreCompetencies = ["React", "Angular"],
         };
