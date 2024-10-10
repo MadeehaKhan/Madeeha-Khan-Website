@@ -1,8 +1,6 @@
 .sidebarNav-link {
   color: #230215 !important;
   font-family: Cambria, Georgia, serif;
-  padding: 3px;
-  margin: 0;
 }
 
 .sidebarNav-link:hover {
@@ -22,7 +20,12 @@
 }
 
 .sideBarElements {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-style: dashed;
   vertical-align: middle;
+}
+
+.sidebarNav  {
+  max-width: 80%;
 }

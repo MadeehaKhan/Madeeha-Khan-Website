@@ -2,8 +2,14 @@
   width: 100%;
 }
 
+.resumeHeader {
+  width: 100%;
+  font-family: Consolas, monaco, monospace;
+  margin-bottom: 5px;
+}
+
 .resumeItem {
-  background-color: rgba(255,255,255,0.4)  !important;
+  background-color: rgba(255,255,255,0.3)  !important;
 }
 
 .experienceHeader {
@@ -12,20 +18,13 @@
   padding: 5px;
 }
 
-.resumeHeader {
-  width: 100%;
-  font-family: Consolas, monaco, monospace;
-}
-
 .accordionHeader button {
-  /* active,  active-bg, hover*/
-  background-color: #c20a72c1 !important;
+  background-color: #6888b5c1 !important;
   color: #091943 !important;
   font-family: Consolas, monaco, monospace;
 }
 
 .accordionHeader button:focus {
-  /* active,  active-bg, hover*/
   background-color: rgb(194, 10, 114) !important;
   box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
 }
@@ -38,6 +37,7 @@ dl {
 
 dd {
   font-style: italic;
+  color: rgba(12, 9, 13, 0.628);
 }
 
 .description {
@@ -56,5 +56,24 @@ ul {
 
 .itemDescription li {
   padding-bottom: 5px;
+}
+
+.teacherResume-desc {
+  font-family: MS Sans Serif, sans-serif;
+  background-color:rgba(194, 10, 114,0.05);
+  border-radius: 15px 50px;
+  padding-top: 5px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.teacherResume h4 {
+  margin-top: 10px !important;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(12, 9, 13) !important;
 }
 

@@ -19,7 +19,6 @@ class ExperienceData
                 "Managed the full project lifecycle from inception to deployment using Agile methodologies, ensuring timely delivery and alignment with business goals. Collaborating with cross-functional teams and two engineers, we implemented new website features and enhanced backend performance, site reliability, and scalability.",
                 "Led front end development for the new Being ME Toronto website as a marketing tool and more effective means of communication with the community Being ME serves.",
             ],
-            Link = "",
         },
         new ExperienceListModel
         {
@@ -64,6 +63,7 @@ class ExperienceData
                 "Implemented features to facilitate commuinication between patients and their immediate healthcare providers to maintain timeliness in recieving crucial care",
                 "This project will return!",
             ],
+            Link = "https://github.com/MadeehaKhan/Pillbox",
         },
         new ExperienceListModel
         {

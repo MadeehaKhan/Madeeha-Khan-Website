@@ -25,20 +25,20 @@ type ExperienceProps = {
 };
 
 const ExperienceHeader = forwardRef(
-  (props: { organization: string }, ref: any) => {
-    const { organization } = props;
+  //TODO: add the link somehow
+  (props: { organization: string; link?: string }, ref: any) => {
+    const { organization, link } = props;
     return (
       <h5 ref={ref} className={`${styles["experienceHeader"]}`}>
-        {organization}
+        <a href={link} target="_blank">
+          {organization}
+        </a>
       </h5>
     );
   }
 );
 
 const ExperienceFrame = (props: ExperienceProps) => {
-  const renderTooltip = () => (
-    <Tooltip id="button-tooltip">Simple tooltip</Tooltip>
-  );
   return (
     <>
       {props.experience.map((item: ExperienceListModel) => {
@@ -54,16 +54,10 @@ const ExperienceFrame = (props: ExperienceProps) => {
         return (
           <Container key={id}>
             <Row>
-              <OverlayTrigger
-                placement="right"
-                delay={{ show: 250, hide: 400 }}
-                overlay={renderTooltip}
-                trigger={["hover","focus"]}
-              >
-                <ExperienceHeader
-                  organization={organization}
-                ></ExperienceHeader>
-              </OverlayTrigger>
+              <ExperienceHeader
+                organization={organization}
+                link={link}
+              ></ExperienceHeader>
             </Row>
             <dl className={`dl-horizontal`}>
               <dt>{role}</dt>
@@ -129,21 +123,17 @@ export const ResumeFrame = (props: FrameProps) => {
           </Accordion.Item>
         </Accordion>
       ) : (
-        <Container>
-          <Row>
+        <Container className={`${styles["teacherResume"]}`}>
+          <Row className={`${styles["teacherResume-desc"]}`}>
             <h2>{experience.title}</h2>
-          </Row>
-          <Row>
             <p>{experience.introduction}</p>
           </Row>
-          <Row></Row>
           <Row>
-            <h3>Relevant Experience</h3>
+            <h4>Relevant Experience</h4>
             <ExperienceFrame
               experience={experience.experienceList}
             ></ExperienceFrame>
           </Row>
-          <Row></Row>
         </Container>
       )}
     </>
