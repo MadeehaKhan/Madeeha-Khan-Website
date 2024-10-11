@@ -3,7 +3,6 @@ import { ResumeFrame } from "../components/ResumeFrame";
 import { useEffect, useState } from "react";
 import { getRelevantExperience as experience } from "../services/ResumeService";
 import { ExperienceModel } from "../models/ExperienceModel";
-import { Loader } from "../components/SharedComponents";
 import style from "../assets/Resume.module.css";
 
 export const Resume = () => {
@@ -52,7 +51,7 @@ export const Resume = () => {
           experience={experienceData}
         ></ResumeFrame>
       ) : (
-        <Loader></Loader>
+        <></>
       )}
     </Nav>
   );

@@ -15,7 +15,7 @@ public class ExperienceModel {
     public ExperienceListModel[] ExperienceList { get; set; }
     public string Title { get; set; }
     public string Introduction { get; set; }
-    public string[]? CoreCompetencies { get; set; }
+    public CompetencyModel[]? CoreCompetencies { get; set; }
 
  }
 
@@ -23,5 +23,6 @@ public class ExperienceModel {
     public int Id { get; set; }
     public string Title { get; set; }
     public string Url { get; set; } 
-    public string Details { get; set; } 
+    public string? Details { get; set; } 
+    public string Category { get; set; }
  }

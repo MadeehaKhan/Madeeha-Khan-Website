@@ -1,0 +1,9 @@
+.base {
+  min-width: 1200px;
+}
+
+@media screen and (max-width: 800px) {
+  .base {
+    min-width: fit-content;
+  }
+}
