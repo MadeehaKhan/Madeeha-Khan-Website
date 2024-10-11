@@ -1,4 +1,4 @@
-import { Nav, Placeholder } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 
 export const ListItem = (point: string, index: number) => {
   return <li key={index}> {point} </li>;
@@ -11,9 +11,4 @@ export const LinkListItem = (styles: any, eventKey: string) => {
       {eventKey.toLowerCase()}
     </Nav.Link>
   );
-};
-
-//TODO: style + format 
-export const Loader = () => {
-  return <Placeholder xs={12} />;
 };

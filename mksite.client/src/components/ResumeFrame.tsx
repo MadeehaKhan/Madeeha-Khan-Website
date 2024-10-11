@@ -7,12 +7,22 @@ import {
 } from "react-bootstrap";
 import { ListItem } from "./SharedComponents";
 import {
+  CompetencyModel,
   ExperienceListModel,
   ExperienceModel,
 } from "../models/ExperienceModel";
 import styles from "../assets/ResumeFrame.module.css";
 import { forwardRef } from "react";
-//TODO: add styling
+import ReactLogo from "../assets/logos/React.svg";
+import AngularLogo from "../assets/logos/Angular.svg";
+import PythonLogo from "../assets/logos/Python.svg";
+import CSLogo from "../assets/logos/CSharp.svg";
+import AWSLogo from "../assets/logos/AWS.svg";
+import PBILogo from "../assets/logos/PowerBI.svg";
+import DockerLogo from "../assets/logos/Docker.svg";
+import JiraLogo from "../assets/logos/Jira.svg";
+import NodeLogo from "../assets/logos/Node.svg";
+
 //TODO: add user prompt to contact after viewing resume
 
 type FrameProps = {
@@ -24,19 +34,52 @@ type ExperienceProps = {
   experience: ExperienceListModel[];
 };
 
-const ExperienceHeader = forwardRef(
-  //TODO: add the link somehow
-  (props: { organization: string; link?: string }, ref: any) => {
-    const { organization, link } = props;
-    return (
-      <h5 ref={ref} className={`${styles["experienceHeader"]}`}>
-        <a href={link} target="_blank">
-          {organization}
-        </a>
-      </h5>
-    );
+const CompetencyFrame = forwardRef(
+  (props: { competencies: CompetencyModel[] }, ref) => {
+    const { competencies } = props;
+    const competencyLogos = [
+      ReactLogo,
+      AngularLogo,
+      CSLogo,
+      PythonLogo,
+      NodeLogo,
+      PBILogo,
+      DockerLogo,
+      JiraLogo,
+      AWSLogo,
+    ];
+    return competencies.map((competency) => {
+      const { id, title, details } = competency;
+      return (
+        <Container key={id} className={`${styles["competencyContainer"]}`}>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
+          >
+            <img
+              ref={ref}
+              width="50px"
+              height="50px"
+              src={competencyLogos[id - 1]}
+              alt={title}
+            ></img>
+          </OverlayTrigger>
+        </Container>
+      );
+    });
   }
 );
+
+const ExperienceHeader = (props: { organization: string; link?: string }) => {
+  const { organization, link } = props;
+  return (
+    <h5 className={`${styles["experienceHeader"]}`}>
+      <a href={link} target="_blank">
+        {organization}
+      </a>
+    </h5>
+  );
+};
 
 const ExperienceFrame = (props: ExperienceProps) => {
   return (
@@ -105,17 +148,24 @@ export const ResumeFrame = (props: FrameProps) => {
             </Accordion.Body>
           </Accordion.Item>
           <Row></Row>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="1" className={`${styles["resumeItem"]}`}>
             <Accordion.Header className={`${styles["accordionHeader"]}`}>
               Core Competencies
             </Accordion.Header>
             <Accordion.Body>
-              <ul className="list-unstyled">
-                {experience.coreCompetencies?.map(ListItem)}
-              </ul>
+              <CompetencyFrame
+                competencies={experience.coreCompetencies.filter(
+                  (competency) => competency.category == "Language"
+                )}
+              ></CompetencyFrame>
+              <CompetencyFrame
+                competencies={experience.coreCompetencies.filter(
+                  (competency) => competency.category == "Tool"
+                )}
+              ></CompetencyFrame>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2">
+          <Accordion.Item eventKey="2" className={`${styles["resumeItem"]}`}>
             <Accordion.Header className={`${styles["accordionHeader"]}`}>
               Certifications
             </Accordion.Header>

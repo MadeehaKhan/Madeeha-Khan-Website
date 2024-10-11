@@ -11,7 +11,7 @@ class ExperienceData
             Id = 1,
             Organization = "Being ME",
             Role = "IT Specialist",
-            Duration = "Nov 2022 - Present",
+            Duration = "Nov 2022 - Aug 2024",
             GeneralDescription =
                 "Improving operations at a nonprofit organization enabling Muslim women to build and contribute to their communities.",
             ItemizedDescription =
@@ -85,7 +85,7 @@ class ExperienceData
             Id = 6,
             Organization = "McMaster Computer Science (CS) Outreach",
             Role = "Software Developer",
-            Duration = "April 2015 - April 2017",
+            Duration = "Apr 2015 - Apr 2017",
             GeneralDescription =
                 "Developed libraries and delivered lessons to teach students grades 2-10 about the basics of Computer Science.",
             ItemizedDescription =
@@ -175,6 +175,82 @@ class ExperienceData
         },
     ];
 
+    public static readonly CompetencyModel[] CoreCompetencies =
+    [
+        new CompetencyModel
+        {
+            Id = 1,
+            Title = "React",
+            Url = "../assets/logos/React.svg",
+            Details = "React in TS with Redux",
+            Category = "Language",
+        },
+        new CompetencyModel
+        {
+            Id = 2,
+            Title = "Angular",
+            Url = "../assets/logos/Angular.svg",
+            Details = "Angular 14+ and Ionic for mobile",
+            Category = "Language",
+        },
+        new CompetencyModel
+        {
+            Id = 3,
+            Title = "C#",
+            Url = "../assets/logos/CSharp.svg",
+            Details = "C# with ASP .NET & Entity Framework",
+            Category = "Language",
+        },
+        new CompetencyModel
+        {
+            Id = 4,
+            Title = "Python",
+            Url = "../assets/logos/Python.svg",
+            Details = "Python for backend with Flask and Django",
+            Category = "Language",
+        },
+        new CompetencyModel
+        {
+            Id = 5,
+            Title = "Node.js",
+            Url = "../assets/logos/Node.svg",
+            Details = "Node.js backend for mobile, desktop, and web applications",
+            Category = "Language",
+        },
+        new CompetencyModel
+        {
+            Id = 6,
+            Title = "Power BI",
+            Url = "../assets/logos/PowerBI.svg",
+            Category = "Tool",
+            Details = "Power BI for data analysis and management"
+        },
+        new CompetencyModel
+        {
+            Id = 7,
+            Title = "Docker",
+            Url = "../assets/logos/Docker.svg",
+            Category = "Tool",
+            Details = "Docker"
+        },
+        new CompetencyModel
+        {
+            Id = 8,
+            Title = "Jira",
+            Url = "../assets/logos/Jira.svg",
+            Details = "Planning, managing, and archiving sprints through Atlassian",
+            Category = "Tool",
+        },
+        new CompetencyModel
+        {
+            Id = 9,
+            Title = "Amazon Web Services",
+            Url = "../assets/logos/AWS.svg",
+            Details = "Various development and DevOps tooling on cloud systems",
+            Category = "Tool",
+        },
+    ];
+
     public readonly ExperienceModel TeachingExperience =
         new()
         {
@@ -191,6 +267,6 @@ class ExperienceData
             Introduction =
                 "Fullstack engineer with experience in React, Angular, .NET, and Node.js.",
             ExperienceList = ProgrammingExperienceList,
-            CoreCompetencies = ["React", "Angular"],
+            CoreCompetencies = CoreCompetencies,
         };
 }

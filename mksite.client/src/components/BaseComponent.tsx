@@ -5,6 +5,8 @@ import { useState } from "react";
 import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
 import { HomePage } from "../pages/HomePage";
+import { Footer } from "./Footer";
+import style from "../assets/BaseComponent.module.css";
 
 const BaseComponent = () => {
   //controls to display middle element
@@ -35,7 +37,7 @@ const BaseComponent = () => {
   };
 
   return (
-    <Container>
+    <Container className={`${style["base"]}`}>
       <Row>
         <Col></Col>
         <Col md="2">
@@ -46,7 +48,14 @@ const BaseComponent = () => {
           ></Sidebar>
         </Col>
         <Col md="8">{renderSwitch(activePage)}</Col>
-        <Col style={activePage == "Resume" ? colStyle : {}}></Col>
+        <Col
+          style={
+            activePage == "Resume" || activePage == "About" ? colStyle : {}
+          }
+        ></Col>
+      </Row>
+      <Row>
+        <Footer></Footer>
       </Row>
     </Container>
   );
