@@ -1,5 +1,18 @@
 .base {
-  min-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.body {
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+.footer {
+  position: absolute;
+  width: 100vw;
+  left: calc(-50vw + 50%);
 }
 
 @media screen and (max-width: 800px) {

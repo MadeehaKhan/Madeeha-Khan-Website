@@ -153,16 +153,11 @@ export const ResumeFrame = (props: FrameProps) => {
               Core Competencies
             </Accordion.Header>
             <Accordion.Body>
-              <CompetencyFrame
-                competencies={experience.coreCompetencies.filter(
-                  (competency) => competency.category == "Language"
-                )}
-              ></CompetencyFrame>
-              <CompetencyFrame
-                competencies={experience.coreCompetencies.filter(
-                  (competency) => competency.category == "Tool"
-                )}
-              ></CompetencyFrame>
+              {experience.coreCompetencies && (
+                <CompetencyFrame
+                  competencies={experience.coreCompetencies}
+                ></CompetencyFrame>
+              )}
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2" className={`${styles["resumeItem"]}`}>

@@ -25,12 +25,11 @@ export const About = () => {
         {carouselData &&
           carouselData.map(({ id, url, altText, caption }) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={id}>
                 <img
                   className={`${styles["carouselImage"]}`}
                   src={url}
                   alt={altText}
-                  key={id}
                 ></img>
                 <Carousel.Caption>
                   <h3>{caption}</h3>

@@ -31,14 +31,9 @@ const BaseComponent = () => {
     }
   };
 
-  const colStyle = {
-    paddingLeft: "0",
-    paddingRight: "0",
-  };
-
   return (
     <Container className={`${style["base"]}`}>
-      <Row>
+      <Row className={`${style["body"]}`}>
         <Col></Col>
         <Col md="2">
           <Sidebar
@@ -48,13 +43,9 @@ const BaseComponent = () => {
           ></Sidebar>
         </Col>
         <Col md="8">{renderSwitch(activePage)}</Col>
-        <Col
-          style={
-            activePage == "Resume" || activePage == "About" ? colStyle : {}
-          }
-        ></Col>
+        <Col></Col>
       </Row>
-      <Row>
+      <Row className={`${style["footer"]}`}>
         <Footer></Footer>
       </Row>
     </Container>

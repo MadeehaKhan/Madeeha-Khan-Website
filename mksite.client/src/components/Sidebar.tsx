@@ -33,7 +33,9 @@ export const Sidebar = (props: SidebarProps) => {
               eventKey={link}
               key={link}
             >
-              {link.toLowerCase()}
+              {link == activePage
+                ? `「 ${link.toLowerCase()} 」`
+                : link.toLowerCase()}
             </Nav.Link>
           );
         })}

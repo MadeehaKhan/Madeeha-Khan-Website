@@ -1,5 +1,7 @@
 .resumeAccordion {
   width: 100%;
+  margin-bottom: 50px;
+  flex: 1 1 auto;
 }
 
 .resumeHeader {

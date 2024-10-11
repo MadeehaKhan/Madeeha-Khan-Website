@@ -3,10 +3,25 @@ import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 import style from "../assets/Footer.module.css";
 
 const Attributions = forwardRef((props, ref) => {
-  return <p ref={ref}>Attributions</p>;
+  return (
+    <div ref={ref}>
+      <p>Attributions</p>
+    </div>
+  );
 });
 
-export const Footer = () => {
+const BkgAttr = () => {
+  return (
+    <div>
+      "Background from:"
+      <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">
+        Free SVG Backgrounds and Patterns by SVGBackgrounds.com
+      </a>
+    </div>
+  );
+};
+
+export const Footer = (props) => {
   //section for attributions
   //link to github
   //ownership and built with
@@ -14,14 +29,7 @@ export const Footer = () => {
     <Container className={`${style["footer"]}`}>
       <OverlayTrigger
         placement="top"
-        overlay={
-          <Tooltip>
-            "Background from:"
-            <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">
-              Free SVG Backgrounds and Patterns by SVGBackgrounds.com
-            </a>
-          </Tooltip>
-        }
+        overlay={<Tooltip id="tooltip-top">{<BkgAttr></BkgAttr>}</Tooltip>}
       >
         <Attributions></Attributions>
       </OverlayTrigger>
