@@ -1,6 +1,7 @@
 .sidebarNav-link {
   color: #230215 !important;
   font-family: Cambria, Georgia, serif;
+  white-space: nowrap;
 }
 
 .sidebarNav-link:hover {

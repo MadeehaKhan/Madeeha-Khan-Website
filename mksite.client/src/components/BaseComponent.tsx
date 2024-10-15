@@ -4,12 +4,11 @@ import { Sidebar } from "./Sidebar";
 import { useState } from "react";
 import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
-import { HomePage } from "../pages/HomePage";
+import { Home } from "../pages/Home";
 import { Footer } from "./Footer";
 import style from "../assets/BaseComponent.module.css";
 
 const BaseComponent = () => {
-  //controls to display middle element
   const [activePage, setActivePage] = useState("Home");
   const links = ["Home", "Resume", "About", "Contact"];
 
@@ -23,7 +22,7 @@ const BaseComponent = () => {
       case "Resume":
         return <Resume></Resume>;
       case "Home":
-        return <HomePage></HomePage>;
+        return <Home></Home>;
       case "About":
         return <About></About>;
       case "Contact":
@@ -35,7 +34,7 @@ const BaseComponent = () => {
     <Container className={`${style["base"]}`}>
       <Row className={`${style["body"]}`}>
         <Col></Col>
-        <Col md="2">
+        <Col md="2" className={`${style["sidebar"]}`}>
           <Sidebar
             handlePageChange={navigateContent}
             currentPage={activePage}

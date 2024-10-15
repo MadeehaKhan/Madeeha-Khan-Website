@@ -8,6 +8,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  min-height: 100vh;
+  min-height: 50vh;
   flex-direction: column;
 }
