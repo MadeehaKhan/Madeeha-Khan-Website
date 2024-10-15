@@ -1,25 +1,7 @@
-import { forwardRef } from "react";
-import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
+import GithubIcon from "../assets/logos/Github.svg";
 import style from "../assets/Footer.module.css";
 
-const Attributions = forwardRef((props, ref) => {
-  return (
-    <div ref={ref}>
-      <p>Attributions</p>
-    </div>
-  );
-});
-
-const BkgAttr = () => {
-  return (
-    <div>
-      "Background from:"
-      <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">
-        Free SVG Backgrounds and Patterns by SVGBackgrounds.com
-      </a>
-    </div>
-  );
-};
 
 export const Footer = (props) => {
   //section for attributions
@@ -27,12 +9,9 @@ export const Footer = (props) => {
   //ownership and built with
   return (
     <Container className={`${style["footer"]}`}>
-      <OverlayTrigger
-        placement="top"
-        overlay={<Tooltip id="tooltip-top">{<BkgAttr></BkgAttr>}</Tooltip>}
-      >
-        <Attributions></Attributions>
-      </OverlayTrigger>
+      <Col className={`${style["github"]}`}>
+      <a href={`https://github.com/MadeehaKhan/`} target="_blank"><img src={GithubIcon} alt="Github Icon" width="50px" height="50px"></img></a>
+      </Col>
     </Container>
   );
 };
