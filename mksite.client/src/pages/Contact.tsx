@@ -7,20 +7,34 @@ import LinkedIn from "../assets/LinkedIn.svg";
 
 const ContactCard = (props) => {
   return (
-    <Card className={`${style.card}`} style={{ width: "18rem" }}>
+    <Card className={`${style.card}`} style={{ width: "20rem" }}>
       <Card.Img variant="top" src={JavaImg} height="180px" />
       <Card.Body>
         <Card.Title className={`${style.title}`}>Madeeha Khan</Card.Title>
         <Card.Text>hi! thanks for visiting!</Card.Text>
         <ButtonGroup>
           <Button className={`${style.button}`}>
-            <img width="25px" height="25px" src={Phone} alt="Call"></img>
+            <a href={`tel:${Phone}`}>
+              <img width="25px" height="25px" src={Phone} alt="Call"></img>
+            </a>
           </Button>
           <Button className={`${style.button}`}>
-            <img width="25px" height="25px" src={Email} alt="Email"></img>
+            <a
+              href="https://www.linkedin.com/in/madeeha-khan-1a0741116/"
+              target="_blank"
+            >
+              <img
+                width="25px"
+                height="25px"
+                src={LinkedIn}
+                alt="LinkedIn"
+              ></img>
+            </a>
           </Button>
           <Button className={`${style.button}`}>
-            <img width="25px" height="25px" src={LinkedIn} alt="LinkedIn"></img>
+            <a href={`mailto:${Email}`}>
+              <img width="25px" height="25px" src={Email} alt="Email"></img>
+            </a>
           </Button>
         </ButtonGroup>
       </Card.Body>
