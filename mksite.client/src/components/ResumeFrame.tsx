@@ -58,8 +58,8 @@ const CompetencyFrame = forwardRef(
           >
             <img
               ref={ref}
-              width="50px"
-              height="50px"
+              width="75px"
+              height="75px"
               src={competencyLogos[id - 1]}
               alt={title}
             ></img>

@@ -93,7 +93,7 @@ a {
 
 .competencyContainer {
   display: inline-flex;
-  max-width: 120px !important;
+  max-width: 150px !important;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
