@@ -129,44 +129,50 @@ export const ResumeFrame = (props: FrameProps) => {
   return (
     <>
       {type == "programming" ? (
-        <Accordion
-          defaultActiveKey="0"
-          className={`${styles["resumeAccordion"]}`}
-        >
-          <Row className={`${styles["resumeHeader"]}`}>
-            <h2>{experience.title}</h2>
-            <p>{experience.introduction}</p>
-          </Row>
-          <Accordion.Item eventKey="0" className={`${styles["resumeItem"]}`}>
-            <Accordion.Header className={`${styles["accordionHeader"]}`}>
-              Relevant Experience
-            </Accordion.Header>
-            <Accordion.Body>
-              <ExperienceFrame
-                experience={experience.experienceList}
-              ></ExperienceFrame>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Row></Row>
-          <Accordion.Item eventKey="1" className={`${styles["resumeItem"]}`}>
-            <Accordion.Header className={`${styles["accordionHeader"]}`}>
-              Core Competencies
-            </Accordion.Header>
-            <Accordion.Body>
-              {experience.coreCompetencies && (
-                <CompetencyFrame
-                  competencies={experience.coreCompetencies}
-                ></CompetencyFrame>
-              )}
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="2" className={`${styles["resumeItem"]}`}>
-            <Accordion.Header className={`${styles["accordionHeader"]}`}>
-              Certifications
-            </Accordion.Header>
-            <Accordion.Body></Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+        <Container className={`${styles["resumeAccordion"]}`}>
+          <Accordion defaultActiveKey="0">
+            <Row className={`${styles["resumeHeader"]}`}>
+              <h2>{experience.title}</h2>
+              <p>{experience.introduction}</p>
+            </Row>
+            <Accordion.Item eventKey="0" className={`${styles["resumeItem"]}`}>
+              <Accordion.Header className={`${styles["accordionHeader"]}`}>
+                Relevant Experience
+              </Accordion.Header>
+              <Accordion.Body>
+                <ExperienceFrame
+                  experience={experience.experienceList}
+                ></ExperienceFrame>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Row></Row>
+            <Accordion.Item eventKey="1" className={`${styles["resumeItem"]}`}>
+              <Accordion.Header className={`${styles["accordionHeader"]}`}>
+                Core Competencies
+              </Accordion.Header>
+              <Accordion.Body>
+                {experience.coreCompetencies && (
+                  <CompetencyFrame
+                    competencies={experience.coreCompetencies}
+                  ></CompetencyFrame>
+                )}
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2" className={`${styles["resumeItem"]}`}>
+              <Accordion.Header className={`${styles["accordionHeader"]}`}>
+                Certifications
+              </Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+          <a
+            href=""
+            target="_blank"
+            className={`${`${styles["resume-link"]}`}`}
+          >
+            <b>{`${"full resume here".toUpperCase()}`}</b>
+          </a>
+        </Container>
       ) : (
         <Container className={`${styles["teacherResume"]}`}>
           <Row className={`${styles["teacherResume-desc"]}`}>

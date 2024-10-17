@@ -35,7 +35,7 @@ const BaseComponent = () => {
     <Container className={`${style["base"]}`}>
       <Row className={`${style["body"]}`}>
         <Col></Col>
-        <Col md="2">
+        <Col md="2" className={`${style["sidebar"]}`}>
           <Sidebar
             handlePageChange={navigateContent}
             currentPage={activePage}
