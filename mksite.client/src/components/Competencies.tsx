@@ -1,1 +1,0 @@
-//display logos for stuff
