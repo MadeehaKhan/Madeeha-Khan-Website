@@ -1,7 +1,7 @@
 .footer {
   height: 150px;
   bottom: 0;
-  background-color: rgba(194, 10, 114, 0.05);
+  background-color: rgba(194, 10, 114, 0.1);
   color: rgba(12, 9, 13, 0.628);
   justify-items: left;
   border-top: 0.1rem solid rgba(104, 136, 181, 0.2);

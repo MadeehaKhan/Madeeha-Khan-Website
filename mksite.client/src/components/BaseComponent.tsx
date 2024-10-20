@@ -2,7 +2,6 @@ import { Container, Col, Row } from "react-bootstrap";
 import { Resume } from "../pages/Resume";
 import { Sidebar } from "./Sidebar";
 import { useState } from "react";
-import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
 import { Home } from "../pages/Home";
 import { Footer } from "./Footer";
@@ -11,7 +10,7 @@ import style from "../assets/BaseComponent.module.css";
 const BaseComponent = () => {
   //controls to display middle element
   const [activePage, setActivePage] = useState("Home");
-  const links = ["Home", "Resume", "About", "Contact"];
+  const links = ["Home", "Resume", "Contact"];
 
   const navigateContent = (page: string) => {
     //console.log(`going from ${activePage} to ${page}!`);
@@ -24,8 +23,6 @@ const BaseComponent = () => {
         return <Resume></Resume>;
       case "Home":
         return <Home></Home>;
-      case "About":
-        return <About></About>;
       case "Contact":
         return <Contact></Contact>;
     }

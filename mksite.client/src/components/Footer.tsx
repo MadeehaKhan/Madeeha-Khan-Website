@@ -3,7 +3,7 @@ import GithubIcon from "../assets/logos/Github.svg";
 import style from "../assets/Footer.module.css";
 
 
-export const Footer = (props) => {
+export const Footer = () => {
   //section for attributions
   //link to github
   //ownership and built with

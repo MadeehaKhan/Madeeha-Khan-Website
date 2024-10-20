@@ -35,7 +35,7 @@ type ExperienceProps = {
 };
 
 const CompetencyFrame = forwardRef(
-  (props: { competencies: CompetencyModel[] }, ref) => {
+  (props: { competencies: CompetencyModel[] }) => {
     const { competencies } = props;
     const competencyLogos = [
       ReactLogo,
@@ -54,12 +54,9 @@ const CompetencyFrame = forwardRef(
         <Container key={id} className={`${styles["competencyContainer"]}`}>
           <OverlayTrigger
             placement="bottom"
-            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
-          >
-            <img
-              ref={ref}
-              width="75px"
-              height="75px"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}>
+            <img width="50px"
+              height="50px"
               src={competencyLogos[id - 1]}
               alt={title}
             ></img>
@@ -166,9 +163,10 @@ export const ResumeFrame = (props: FrameProps) => {
             </Accordion.Item>
           </Accordion>
           <a
-            href=""
+            href="../assets/mk_Resume.pdf"
             target="_blank"
-            className={`${`${styles["resume-link"]}`}`}
+            className={`${styles["resume-link"]}`}
+            type="application/pdf"
           >
             <b>{`${"full resume here".toUpperCase()}`}</b>
           </a>
@@ -179,8 +177,7 @@ export const ResumeFrame = (props: FrameProps) => {
             <h2>{experience.title}</h2>
             <p>{experience.introduction}</p>
           </Row>
-          <Row>
-            <h4>Relevant Experience</h4>
+          <Row className={`${styles["teacherResume-exp"]}`}>
             <ExperienceFrame
               experience={experience.experienceList}
             ></ExperienceFrame>

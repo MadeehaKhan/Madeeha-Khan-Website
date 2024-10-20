@@ -4,23 +4,24 @@ import style from "../assets/Contact.module.css";
 import Phone from "../assets/Phone.svg";
 import Email from "../assets/Email.svg";
 import LinkedIn from "../assets/LinkedIn.svg";
+import info from "../assets/info.json";
 
-const ContactCard = (props) => {
+const ContactCard = () => {
   return (
     <Card className={`${style.card}`} style={{ width: "20rem" }}>
       <Card.Img variant="top" src={JavaImg} height="180px" />
       <Card.Body>
         <Card.Title className={`${style.title}`}>Madeeha Khan</Card.Title>
-        <Card.Text>hi! thanks for visiting!</Card.Text>
+        <Card.Text>{info.intro}</Card.Text>
         <ButtonGroup>
           <Button className={`${style.button}`}>
-            <a href={`tel:${Phone}`}>
+            <a href={`tel:${info.phn}`}>
               <img width="25px" height="25px" src={Phone} alt="Call"></img>
             </a>
           </Button>
           <Button className={`${style.button}`}>
             <a
-              href="https://www.linkedin.com/in/madeeha-khan-1a0741116/"
+              href={info.linkedin}
               target="_blank"
             >
               <img
@@ -32,7 +33,7 @@ const ContactCard = (props) => {
             </a>
           </Button>
           <Button className={`${style.button}`}>
-            <a href={`mailto:${Email}`}>
+            <a href={`mailto:${info.email}`}>
               <img width="25px" height="25px" src={Email} alt="Email"></img>
             </a>
           </Button>
