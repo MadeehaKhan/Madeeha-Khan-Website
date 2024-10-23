@@ -4,16 +4,18 @@ import style from "../assets/Contact.module.css";
 import Phone from "../assets/Phone.svg";
 import Email from "../assets/Email.svg";
 import LinkedIn from "../assets/LinkedIn.svg";
+import pic from "../assets/meeeee.jpeg";
 import info from "../assets/info.json";
 
 const ContactCard = () => {
   return (
-    <Card className={`${style.card}`} style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={JavaImg} height="180px" />
+    <Card className={`${style.card}`} style={{ width: "30rem" }}>
       <Card.Body>
-        <Card.Title className={`${style.title}`}>Madeeha Khan</Card.Title>
+        <Card.Title className={`${style.title}`}>{info.title}</Card.Title>
+        <Card.Title className={`${style.title}`}>{info.tagline}</Card.Title>
         <Card.Text>{info.intro}</Card.Text>
-        <ButtonGroup>
+        <Card.Text>{info.moreInfo}</Card.Text>
+        <ButtonGroup className={`${style.btngrp}`}>
           <Button className={`${style.button}`}>
             <a href={`tel:${info.phn}`}>
               <img width="25px" height="25px" src={Phone} alt="Call"></img>

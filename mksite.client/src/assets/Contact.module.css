@@ -3,18 +3,22 @@
 }
 
 .card {
-    background-color: rgba(255,255,255,0.3) !important;
+    background-color: rgba(255,255,255,0.4) !important;
     text-align: center;
 }
 
 .title {
     font-family: "Press Start 2P", system-ui;
+    margin-bottom: 10px !important;
 }
 
 .card img {
     margin: auto;
     display: block;
-    max-width: 150px;
+}
+
+.btngrp {
+    width: 75%;
 }
 
 .button {

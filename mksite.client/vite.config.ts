@@ -37,6 +37,9 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        watch: null
+    },
     plugins: [plugin(), basicSsl()],
     resolve: {
         alias: {
@@ -45,10 +48,6 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/weatherforecast': {
-                target,
-                secure: false
-            },
             '^/experience':{
                 target,
                 secure: false
