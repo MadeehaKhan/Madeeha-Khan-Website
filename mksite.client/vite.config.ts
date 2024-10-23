@@ -12,7 +12,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl'
 const baseFolder =
     env.APPDATA !== undefined && env.APPDATA !== ''
         ? `${env.APPDATA}/ASP.NET/https`
-        : `${env.HOME}/.aspnet/https`;
+        : `${env.BUILD_HOME}/.aspnet/https`;
 console.log(env.HOME)        
 
 const certificateName = "mksite.client";

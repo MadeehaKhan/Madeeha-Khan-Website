@@ -23,15 +23,16 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.402
+      
+      - run: echo "${{github.workspace}}"
+      - run: mkdir -p ${{github.workspace}}/.aspnet/https
       - run: ls -l
-      - run: echo "${{github.action_path}}"
-      - run: mkdir -p ~/.aspnet/https
-
+      
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         env:
-          BUILD_HOME: ${{github.action_path}}
+          BUILD_HOME: ${{github.workspace}}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_MUSHROOM_0A9558C1E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
