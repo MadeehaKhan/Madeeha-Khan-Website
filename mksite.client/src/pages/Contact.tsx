@@ -1,10 +1,8 @@
 import { Button, ButtonGroup, Card, Container } from "react-bootstrap";
-import JavaImg from "../assets/logos/Java.svg";
 import style from "../assets/Contact.module.css";
 import Phone from "../assets/Phone.svg";
 import Email from "../assets/Email.svg";
 import LinkedIn from "../assets/LinkedIn.svg";
-import pic from "../assets/meeeee.jpeg";
 import info from "../assets/info.json";
 
 const ContactCard = () => {
