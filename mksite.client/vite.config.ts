@@ -9,12 +9,15 @@ import { env } from 'process';
 import basicSsl from '@vitejs/plugin-basic-ssl'
 
 
-const baseFolder = `.aspnet/https`;
+const baseFolder =
+    env.APPDATA !== undefined && env.APPDATA !== ''
+        ? `${env.APPDATA}/ASP.NET/https`
+        : `${env.BUILD_HOME}/.aspnet/https`;
+console.log(env.BUILD_HOME)        
 
 const certificateName = "mksite.client";
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
-console.log(`base folder: ${baseFolder}`);
 if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
     if (0 !== child_process.spawnSync('dotnet', [
         'dev-certs',
