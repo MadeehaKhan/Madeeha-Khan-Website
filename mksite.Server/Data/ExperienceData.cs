@@ -223,7 +223,7 @@ class ExperienceData
             Title = "Power BI",
             Url = "../assets/logos/PowerBI.svg",
             Category = "Tool",
-            Details = "Power BI for data analysis and management"
+            Details = "Power BI for data analysis and management",
         },
         new CompetencyModel
         {
@@ -231,7 +231,7 @@ class ExperienceData
             Title = "Docker",
             Url = "../assets/logos/Docker.svg",
             Category = "Tool",
-            Details = "Docker"
+            Details = "Docker",
         },
         new CompetencyModel
         {
@@ -248,6 +248,29 @@ class ExperienceData
             Url = "../assets/logos/AWS.svg",
             Details = "Various development and DevOps tooling on cloud systems",
             Category = "Tool",
+        },
+    ];
+
+    private static readonly CertificateModel[] Certifications =
+    [
+        new()
+        {
+            Id = 1,
+            CourseName = "Power BI Essential Training",
+            Institution = "LinkedIn",
+            Details =
+                "Learning the powerful toolset available through Power BI, including Desktop, Mobile, and Power BI Service.",
+            Link =
+                "https://www.linkedin.com/learning/certificates/243d3b2a97395dbb8947742c776e9261dd523ab2f2ab3af4d60b95e1686ab602",
+        },
+        new()
+        {
+            Id = 2,
+            CourseName = "Meta Front-End Professional Certificate",
+            Institution = "Meta (Coursera)",
+            Details =
+                "Prepare for a career as a web developer through this course offered by Meta, exploring React and other valuable tools.",
+            Link = "",
         },
     ];
 
@@ -268,5 +291,6 @@ class ExperienceData
                 "Fullstack engineer with experience in React, Angular, .NET, and Node.js.",
             ExperienceList = ProgrammingExperienceList,
             CoreCompetencies = CoreCompetencies,
+            Certifications = Certifications,
         };
 }

@@ -7,6 +7,7 @@ import {
 } from "react-bootstrap";
 import { ListItem } from "./SharedComponents";
 import {
+  CertificateModel,
   CompetencyModel,
   ExperienceListModel,
   ExperienceModel,
@@ -22,6 +23,7 @@ import PBILogo from "../assets/logos/PowerBI.svg";
 import DockerLogo from "../assets/logos/Docker.svg";
 import JiraLogo from "../assets/logos/Jira.svg";
 import NodeLogo from "../assets/logos/Node.svg";
+import Certificate from "../assets/Certificate.svg";
 
 //TODO: add user prompt to contact after viewing resume
 
@@ -33,6 +35,35 @@ type FrameProps = {
 type ExperienceProps = {
   experience: ExperienceListModel[];
 };
+
+const CertificateFrame = forwardRef(
+  (props: { certifications: CertificateModel[] }) => {
+    const { certifications } = props;
+    return certifications.map((certification) => {
+      const { id, courseName, institution, details } = certification;
+      return (
+        <Container key={id}>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
+          >
+            <div>
+              <img
+                width="100px"
+                height="100px"
+                src={Certificate}
+                alt={`${courseName} from ${institution}`}
+              ></img>
+              <figcaption>
+                {courseName} from {institution}
+              </figcaption>
+            </div>
+          </OverlayTrigger>
+        </Container>
+      );
+    });
+  }
+);
 
 const CompetencyFrame = forwardRef(
   (props: { competencies: CompetencyModel[] }) => {
@@ -54,8 +85,10 @@ const CompetencyFrame = forwardRef(
         <Container key={id} className={`${styles["competencyContainer"]}`}>
           <OverlayTrigger
             placement="bottom"
-            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}>
-            <img width="50px"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
+          >
+            <img
+              width="50px"
               height="50px"
               src={competencyLogos[id - 1]}
               alt={title}
@@ -159,7 +192,13 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Header className={`${styles["accordionHeader"]}`}>
                 Certifications
               </Accordion.Header>
-              <Accordion.Body></Accordion.Body>
+              <Accordion.Body>
+                {experience.certifications && (
+                  <CertificateFrame
+                    certifications={experience.certifications}
+                  ></CertificateFrame>
+                )}
+              </Accordion.Body>
             </Accordion.Item>
           </Accordion>
           <a

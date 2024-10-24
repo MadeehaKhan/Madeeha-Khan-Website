@@ -16,7 +16,7 @@ public class ExperienceModel {
     public string Title { get; set; }
     public string Introduction { get; set; }
     public CompetencyModel[]? CoreCompetencies { get; set; }
-
+    public CertificateModel[]? Certifications { get; set; }
  }
 
  public class CompetencyModel {
@@ -25,4 +25,12 @@ public class ExperienceModel {
     public string Url { get; set; } 
     public string? Details { get; set; } 
     public string Category { get; set; }
+ }
+
+ public class CertificateModel {
+    public int Id { get; set; }
+    public string CourseName { get; set; }
+    public string Details { get; set; } 
+    public string Institution { get; set; }
+    public string Link { get; set; }
  }
