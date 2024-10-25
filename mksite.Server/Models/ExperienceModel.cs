@@ -2,27 +2,27 @@ namespace mksite.Server.Models;
 
 public class ExperienceListModel
 {
-    public int Id { get; set; }
-    public string Organization { get; set; }
-    public string Role { get; set; }
-    public string Duration { get; set; }
-    public string GeneralDescription { get; set; }
-    public string[] ItemizedDescription { get; set; }
+    required public int Id { get; set; }
+    required public string Organization { get; set; }
+    required public string Role { get; set; }
+    required public string Duration { get; set; }
+    required public string GeneralDescription { get; set; }
+    required public string[] ItemizedDescription { get; set; }
     public string? Link { get; set; }
 }
 
 public class ExperienceModel { 
-    public ExperienceListModel[] ExperienceList { get; set; }
-    public string Title { get; set; }
-    public string Introduction { get; set; }
+    required public ExperienceListModel[] ExperienceList { get; set; }
+    required public string Title { get; set; }
+    required public string Introduction { get; set; }
     public CompetencyModel[]? CoreCompetencies { get; set; }
 
  }
 
  public class CompetencyModel {
-    public int Id { get; set; }
-    public string Title { get; set; }
-    public string Url { get; set; } 
+    required public int Id { get; set; }
+    required  public string Title { get; set; }
+    required public string Url { get; set; } 
     public string? Details { get; set; } 
-    public string Category { get; set; }
+    required public string Category { get; set; }
  }
