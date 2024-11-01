@@ -48,7 +48,7 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         env:
           SWA_CLI_DEPLOYMENT_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_MUSHROOM_0A9558C1E }}
-        run: |
+        run: 
           npx swa deploy ./mksite.client/dist --api-location ./mksite.Server/bin/Release/net8.0 --env production
 
   close_pull_request_job:
