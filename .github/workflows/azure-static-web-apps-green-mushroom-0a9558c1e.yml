@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
@@ -29,9 +28,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Install Node.js dependencies
+      - name: Install Client Dependencies
         working-directory: ./mksite.client
         run: npm install
 
@@ -39,15 +38,17 @@ jobs:
         working-directory: ./mksite.client
         run: npm run build
 
+      - name: Install Azure Static Web Apps CLI
+        run: npm install -g @azure/static-web-apps-cli
+
       - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_MUSHROOM_0A9558C1E }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          app_location: "./mksite.client" # Adjust this based on your project structure
-          api_location: "./mksite.Server" # Optional
-          output_location: "dist" # Adjust this based on your project structure
+        run: |
+          npx swa deploy \
+            --app-location "./mksite.client" \
+            --api-location "./mksite.Server" \
+            --output-location "dist" \
+            --env production \
+            --token "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_MUSHROOM_0A9558C1E }}"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
