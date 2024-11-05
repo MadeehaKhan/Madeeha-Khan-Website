@@ -17,6 +17,11 @@ jobs:
     steps:
       - name: Install Azure CLI Latest
         uses: Azure/cli@v2.1.0
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
+            az storage -h
             
       - name: Install Azure Static Web Apps CLI
         run: npm install -g @azure/static-web-apps-cli
