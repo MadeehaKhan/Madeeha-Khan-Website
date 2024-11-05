@@ -15,6 +15,9 @@ jobs:
   build_job:
     runs-on: self-hosted
     steps:
+      - name: Install Azure CLI Latest
+        uses: Azure/cli@v2.1.0
+            
       - name: Install Azure Static Web Apps CLI
         run: npm install -g @azure/static-web-apps-cli
 
