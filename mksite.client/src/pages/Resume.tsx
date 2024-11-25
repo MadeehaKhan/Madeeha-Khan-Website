@@ -1,7 +1,7 @@
 import { Nav } from "react-bootstrap";
 import { ResumeFrame } from "../components/ResumeFrame";
-import { useEffect, useState } from "react";
-import { getRelevantExperience as experience } from "../services/ResumeService";
+import { useState } from "react";
+import ExperienceData from "../assets/ExperienceData.json";
 import { ExperienceModel } from "../models/ExperienceModel";
 import style from "../assets/Resume.module.css";
 
@@ -9,19 +9,17 @@ export const Resume = () => {
   //TODO: style nav
   const [resumeControl, setResumeControl] = useState<string>("programming");
   const [experienceData, setExperienceData] = useState<ExperienceModel | null>(
-    null
+    ExperienceData.programming
   );
-  useEffect(() => {
-    experience<ExperienceModel>(`/experience/${resumeControl}`)
-      .then((result) => {
-        setExperienceData(result);
-      })
-      .catch(() => {});
-  }, [resumeControl]);
 
   const handleTab = (eventKey: string | null) => {
     if (eventKey && eventKey != resumeControl) {
       setResumeControl(eventKey);
+      setExperienceData(
+        eventKey == "programming"
+          ? ExperienceData.programming
+          : ExperienceData.teaching
+      );
     }
   };
 
