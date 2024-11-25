@@ -11,7 +11,7 @@ export type ExperienceListModel = {
 export type ExperienceModel = {
     title: string;
     introduction: string;
-    coreCompetencies: CompetencyModel[];
+    coreCompetencies?: CompetencyModel[];
     experienceList: ExperienceListModel[];
 }
 
