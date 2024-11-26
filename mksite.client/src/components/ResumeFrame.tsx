@@ -122,10 +122,9 @@ const ExperienceFrame = (props: ExperienceProps) => {
       })}
       {props.type == "programming" && (
         <a
-          href="../assets/mk_resume.pdf"
+          href="https://drive.google.com/file/d/1BXMgjkLGES2L7sbiwoFAgc_ILJ8ZTYSg/view?usp=sharing"
           target="_blank"
           className={`${styles["resume-link"]}`}
-          type="application/pdf"
         >
           <b>{`${"full resume here".toUpperCase()}`}</b>
         </a>
@@ -134,7 +133,6 @@ const ExperienceFrame = (props: ExperienceProps) => {
   );
 };
 
-//TODO: add link to pdf of full resume
 export const ResumeFrame = (props: FrameProps) => {
   const { type, experience } = props;
   return (
