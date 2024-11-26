@@ -1,5 +1,7 @@
+
 .contact {
     font-family: MS Sans Serif, sans-serif;
+    
 }
 
 .card {
@@ -19,6 +21,8 @@
 
 .btngrp {
     width: 75%;
+    flex-direction: row;
+    margin: auto;
 }
 
 .button {
@@ -45,3 +49,11 @@ button:hover {
     background-color: rgb(194, 10, 114) !important;
     box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
   }
+
+  
+@media screen and (max-width: 768px) {
+    .card {
+      max-width: 90vw;
+    }
+  }
+  

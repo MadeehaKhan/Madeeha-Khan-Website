@@ -6,9 +6,8 @@ import { ExperienceModel } from "../models/ExperienceModel";
 import style from "../assets/Resume.module.css";
 
 export const Resume = () => {
-  //TODO: style nav
   const [resumeControl, setResumeControl] = useState<string>("programming");
-  const [experienceData, setExperienceData] = useState<ExperienceModel | null>(
+  const [experienceData, setExperienceData] = useState<ExperienceModel>(
     ExperienceData.programming
   );
 
@@ -43,14 +42,10 @@ export const Resume = () => {
           Teacher
         </Nav.Link>
       </Nav.Item>
-      {experienceData ? (
-        <ResumeFrame
+        <ResumeFrame 
           type={resumeControl}
           experience={experienceData}
         ></ResumeFrame>
-      ) : (
-        <></>
-      )}
     </Nav>
   );
 };

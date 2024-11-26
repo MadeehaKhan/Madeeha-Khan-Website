@@ -27,11 +27,12 @@ import NodeLogo from "../assets/logos/Node.svg";
 
 type FrameProps = {
   type: string;
-  experience: ExperienceModel | null;
+  experience: ExperienceModel;
 };
 
 type ExperienceProps = {
   experience: ExperienceListModel[];
+  type: string;
 };
 
 const CompetencyFrame = forwardRef(
@@ -54,8 +55,10 @@ const CompetencyFrame = forwardRef(
         <Container key={id} className={`${styles["competencyContainer"]}`}>
           <OverlayTrigger
             placement="bottom"
-            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}>
-            <img width="50px"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
+          >
+            <img
+              width="50px"
               height="50px"
               src={competencyLogos[id - 1]}
               alt={title}
@@ -114,6 +117,16 @@ const ExperienceFrame = (props: ExperienceProps) => {
           </Container>
         );
       })}
+      {props.type == "programming" && (
+        <a
+          href="../assets/mk_Resume.pdf"
+          target="_blank"
+          className={`${styles["resume-link"]}`}
+          type="application/pdf"
+        >
+          <b>{`${"full resume here".toUpperCase()}`}</b>
+        </a>
+      )}
     </>
   );
 };
@@ -121,8 +134,6 @@ const ExperienceFrame = (props: ExperienceProps) => {
 //TODO: add link to pdf of full resume
 export const ResumeFrame = (props: FrameProps) => {
   const { type, experience } = props;
-  //TODO: real error handling
-  if (!experience) return <h1>AHHHHHH</h1>;
   return (
     <>
       {type == "programming" ? (
@@ -139,6 +150,7 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Body>
                 <ExperienceFrame
                   experience={experience.experienceList}
+                  type={type}
                 ></ExperienceFrame>
               </Accordion.Body>
             </Accordion.Item>
@@ -162,14 +174,6 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Body></Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <a
-            href="../assets/mk_Resume.pdf"
-            target="_blank"
-            className={`${styles["resume-link"]}`}
-            type="application/pdf"
-          >
-            <b>{`${"full resume here".toUpperCase()}`}</b>
-          </a>
         </Container>
       ) : (
         <Container className={`${styles["teacherResume"]}`}>
@@ -180,6 +184,7 @@ export const ResumeFrame = (props: FrameProps) => {
           <Row className={`${styles["teacherResume-exp"]}`}>
             <ExperienceFrame
               experience={experience.experienceList}
+              type={type}
             ></ExperienceFrame>
           </Row>
         </Container>

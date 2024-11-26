@@ -2,21 +2,18 @@
   position: relative;
   margin: 0 auto;
   padding: 2rem;
+  min-width: fit-content;
 }
 
 .body {
   min-height: 100vh;
   margin-bottom: 50px;
+  flex-direction: row;
 }
 
 .footer {
   position: absolute;
+  bottom: 0;
   width: 100vw;
   left: calc(-50vw + 50%);
-}
-
-@media screen and (max-width: 990px) {
-  .base {
-    min-width: fit-content;
-  }
 }
