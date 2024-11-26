@@ -24,6 +24,7 @@ import JiraLogo from "../assets/logos/Jira.svg";
 import NodeLogo from "../assets/logos/Node.svg";
 
 //TODO: add user prompt to contact after viewing resume
+//TODO: add certificate stuff
 
 type FrameProps = {
   type: string;
@@ -35,6 +36,8 @@ type ExperienceProps = {
   type: string;
 };
 
+//TODO: fix styling
+//TODO: move the frames to another file
 const CompetencyFrame = forwardRef(
   (props: { competencies: CompetencyModel[] }) => {
     const { competencies } = props;
@@ -119,7 +122,7 @@ const ExperienceFrame = (props: ExperienceProps) => {
       })}
       {props.type == "programming" && (
         <a
-          href="../assets/mk_Resume.pdf"
+          href="../assets/mk_resume.pdf"
           target="_blank"
           className={`${styles["resume-link"]}`}
           type="application/pdf"
