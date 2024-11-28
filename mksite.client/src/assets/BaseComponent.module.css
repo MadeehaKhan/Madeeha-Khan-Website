@@ -7,13 +7,12 @@
 
 .body {
   min-height: 100vh;
-  margin-bottom: 50px;
   flex-direction: row;
 }
 
 .footer {
   position: absolute;
-  bottom: 0;
   width: 100vw;
+  bottom: 0;
   left: calc(-50vw + 50%);
 }

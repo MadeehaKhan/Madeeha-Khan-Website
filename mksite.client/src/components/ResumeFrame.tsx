@@ -160,7 +160,7 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Header className={`${styles["accordionHeader"]}`}>
                 Core Competencies
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={`${styles["competencyContainer"]}`}>
                 {experience.coreCompetencies && (
                   <CompetencyFrame
                     competencies={experience.coreCompetencies}
