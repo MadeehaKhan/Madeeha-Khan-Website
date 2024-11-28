@@ -1,59 +1,55 @@
-
 .contact {
-    font-family: MS Sans Serif, sans-serif;
-    
+  font-family: MS Sans Serif, sans-serif;
 }
 
 .card {
-    background-color: rgba(255,255,255,0.4) !important;
-    text-align: center;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  text-align: center;
 }
 
 .title {
-    font-family: "Press Start 2P", system-ui;
-    margin-bottom: 10px !important;
+  font-family: "Press Start 2P", system-ui;
+  margin-bottom: 10px !important;
 }
 
 .card img {
-    margin: auto;
-    display: block;
+  margin: auto;
+  display: block;
 }
 
 .btngrp {
-    width: 75%;
-    flex-direction: row;
-    margin: auto;
+  width: 75%;
+  flex-direction: row;
+  margin: auto;
 }
 
 .button {
-    background-color: #6888B5 !important;
-    border: none !important;
-    
+  background-color: #6888b5 !important;
+  border: none !important;
 }
 
 .button:not(:last-of-type) {
-    border-right: solid 0.15rem #303f53 !important;
+  border-right: solid 0.15rem #303f53 !important;
 }
 
 button:focus {
-    background-color: rgb(194, 10, 114) !important;
-    box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
-  }
+  background-color: rgb(194, 10, 114) !important;
+  box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
+}
 
 button:active {
-    background-color: rgb(194, 10, 114) !important;
-    box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
-  }
+  background-color: rgb(194, 10, 114) !important;
+  box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
+}
 
 button:hover {
-    background-color: rgb(194, 10, 114) !important;
-    box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
-  }
+  background-color: rgb(194, 10, 114) !important;
+  box-shadow: 0 0 0 0.2rem rgba(194, 10, 114, 0.2) !important;
+}
 
-  
 @media screen and (max-width: 768px) {
-    .card {
-      max-width: 90vw;
-    }
+  .card {
+    max-width: 90vw;
+    margin-bottom: 2rem;
   }
-  
+}

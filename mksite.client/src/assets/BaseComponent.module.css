@@ -12,7 +12,7 @@
 
 .footer {
   position: absolute;
-  width: 100vw;
   bottom: 0;
+  width: 101vw;
   left: calc(-50vw + 50%);
 }
