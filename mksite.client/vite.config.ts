@@ -15,6 +15,6 @@ export default defineConfig({
         },
       },
     plugins: [react()],
-    base: "/Madeeha-Khan-Website"
+    base: "/"
     
 })
