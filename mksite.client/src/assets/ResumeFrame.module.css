@@ -1,11 +1,5 @@
-.resumeAccordion {
-  width: 100%;
-  margin-bottom: 50px;
-  flex: 1 1 auto;
-}
 
 .resumeHeader {
-  width: 100%;
   font-family: Consolas, monaco, monospace;
   margin-bottom: 5px;
 }
@@ -74,7 +68,7 @@ ul {
 
 .teacherResume-desc {
   font-family: MS Sans Serif, sans-serif;
-  background-color: rgba(104,136,181,0.15);;
+  background-color: rgba(104, 136, 181, 0.15);
   border-radius: 15px 50px;
   padding-top: 5px;
   margin-top: 10px;
@@ -91,10 +85,14 @@ a {
 }
 
 .competencyContainer {
-  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.competencyContainer div {
   max-width: 150px !important;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .competencyContainer img {

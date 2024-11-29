@@ -9,14 +9,13 @@ type SidebarProps = {
 };
 
 export const Sidebar = (props: SidebarProps) => {
-  //TODO: edit class dropdown-menu and nav-link to style the thing
-  //also move it lower
   const { currentPage, handlePageChange, links } = props;
   const [activePage, setActivePage] = useState(currentPage);
-  const handleSelect = (eventKey: any) => {
+  const handleSelect = (eventKey: string | null) => {
+    if (eventKey) { 
     setActivePage(eventKey);
     handlePageChange(eventKey);
-    //match eventkey to element and add classname
+    }
   };
 
   return (
@@ -42,5 +41,4 @@ export const Sidebar = (props: SidebarProps) => {
       </div>
     </Nav>
   );
-  //TODO: fill about + contact + home
 };

@@ -31,7 +31,6 @@ const BaseComponent = () => {
   return (
     <Container className={`${style["base"]}`}>
       <Row className={`${style["body"]}`}>
-        <Col></Col>
         <Col md="2" className={`${style["sidebar"]}`}>
           <Sidebar
             handlePageChange={navigateContent}
@@ -40,7 +39,6 @@ const BaseComponent = () => {
           ></Sidebar>
         </Col>
         <Col md="8">{renderSwitch(activePage)}</Col>
-        <Col></Col>
       </Row>
       <Row className={`${style["footer"]}`}>
         <Footer></Footer>

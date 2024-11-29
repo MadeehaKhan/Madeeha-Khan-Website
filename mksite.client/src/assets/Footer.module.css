@@ -1,6 +1,10 @@
+div {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
-  height: 150px;
-  bottom: 0;
+  height: 5rem;
   background-color: rgba(194, 10, 114, 0.1);
   color: rgba(12, 9, 13, 0.628);
   justify-items: left;
@@ -9,8 +13,8 @@
 }
 
 .github {
-  position: absolute; 
-  padding-left: 10px;
+  position: absolute;
+  padding-left: 0.5rem;
   bottom: 0;
   max-width: 150px;
 }

@@ -1,13 +1,12 @@
+
 .resumeNav {
   align-items: center;
+  flex-direction: row;
+  padding-bottom: 5rem;
 }
 
 .resumeNav-link {
   color: #230215 !important;
-}
-
-.resumeNav-link:hover {
-  color: #efecca;
 }
 
 .resumeNav-link:focus {
@@ -15,9 +14,10 @@
 }
 
 .resumeNav-link:hover {
-  color: #54474c !important;
+  color: #efecca !important;
 }
 
 .resumeNav:active {
   color: #230215 !important;
 }
+

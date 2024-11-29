@@ -43,3 +43,12 @@
   }
 }
 
+
+@media screen and (max-width: 768px) {
+  .welcome {
+    margin-top: 1em;
+    font-size: medium;
+  }
+}
+
+

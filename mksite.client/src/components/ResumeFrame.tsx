@@ -26,45 +26,20 @@ import NodeLogo from "../assets/logos/Node.svg";
 import Certificate from "../assets/Certificate.svg";
 
 //TODO: add user prompt to contact after viewing resume
+//TODO: add certificate stuff
 
 type FrameProps = {
   type: string;
-  experience: ExperienceModel | null;
+  experience: ExperienceModel;
 };
 
 type ExperienceProps = {
   experience: ExperienceListModel[];
+  type: string;
 };
 
-const CertificateFrame = forwardRef(
-  (props: { certifications: CertificateModel[] }) => {
-    const { certifications } = props;
-    return certifications.map((certification) => {
-      const { id, courseName, institution, details } = certification;
-      return (
-        <Container key={id}>
-          <OverlayTrigger
-            placement="bottom"
-            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
-          >
-            <div>
-              <img
-                width="100px"
-                height="100px"
-                src={Certificate}
-                alt={`${courseName} from ${institution}`}
-              ></img>
-              <figcaption>
-                {courseName} from {institution}
-              </figcaption>
-            </div>
-          </OverlayTrigger>
-        </Container>
-      );
-    });
-  }
-);
-
+//TODO: fix styling
+//TODO: move the frames to another file
 const CompetencyFrame = forwardRef(
   (props: { competencies: CompetencyModel[] }) => {
     const { competencies } = props;
@@ -147,15 +122,21 @@ const ExperienceFrame = (props: ExperienceProps) => {
           </Container>
         );
       })}
+      {props.type == "programming" && (
+        <a
+          href="https://drive.google.com/file/d/1BXMgjkLGES2L7sbiwoFAgc_ILJ8ZTYSg/view?usp=sharing"
+          target="_blank"
+          className={`${styles["resume-link"]}`}
+        >
+          <b>{`${"full resume here".toUpperCase()}`}</b>
+        </a>
+      )}
     </>
   );
 };
 
-//TODO: add link to pdf of full resume
 export const ResumeFrame = (props: FrameProps) => {
   const { type, experience } = props;
-  //TODO: real error handling
-  if (!experience) return <h1>AHHHHHH</h1>;
   return (
     <>
       {type == "programming" ? (
@@ -172,6 +153,7 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Body>
                 <ExperienceFrame
                   experience={experience.experienceList}
+                  type={type}
                 ></ExperienceFrame>
               </Accordion.Body>
             </Accordion.Item>
@@ -180,7 +162,7 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Header className={`${styles["accordionHeader"]}`}>
                 Core Competencies
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={`${styles["competencyContainer"]}`}>
                 {experience.coreCompetencies && (
                   <CompetencyFrame
                     competencies={experience.coreCompetencies}
@@ -201,14 +183,6 @@ export const ResumeFrame = (props: FrameProps) => {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <a
-            href="../assets/mk_Resume.pdf"
-            target="_blank"
-            className={`${styles["resume-link"]}`}
-            type="application/pdf"
-          >
-            <b>{`${"full resume here".toUpperCase()}`}</b>
-          </a>
         </Container>
       ) : (
         <Container className={`${styles["teacherResume"]}`}>
@@ -219,6 +193,7 @@ export const ResumeFrame = (props: FrameProps) => {
           <Row className={`${styles["teacherResume-exp"]}`}>
             <ExperienceFrame
               experience={experience.experienceList}
+              type={type}
             ></ExperienceFrame>
           </Row>
         </Container>

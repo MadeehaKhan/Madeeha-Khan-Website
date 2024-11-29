@@ -1,28 +1,36 @@
+.sidebarNav {
+  padding-bottom: 1em;
+  align-self: stretch;
+  max-width: 166px;
+}
+
 .sidebarNav-link {
   color: #230215 !important;
   font-family: Cambria, Georgia, serif;
   white-space: nowrap;
 }
 
-.sidebarNav-link:hover {
-  color: #efecca;
-}
 
 .sidebarNav-link:focus {
   color: #54474c !important;
 }
 
 .sidebarNav-link:hover {
-  color: #54474c !important;
+  color: #efecca !important;
 }
 
 .sideBarElements {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
   border-style: dashed;
   vertical-align: middle;
 }
 
-.sidebarNav  {
-  max-width: 80%;
+
+@media screen and (max-width: 768px) {
+  .sidebarNav {
+    max-width: 90vw;
+  }
 }
+
+
