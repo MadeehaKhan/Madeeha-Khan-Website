@@ -87,12 +87,19 @@ a {
 .competencyContainer {
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .competencyContainer div {
   max-width: 150px !important;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.competencyContainer p {
+  max-width: 150px;
+  font-size: small;
+  font-family: Consolas, monaco, monospace;;
 }
 
 .competencyContainer img {

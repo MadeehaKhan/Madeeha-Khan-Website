@@ -13,6 +13,7 @@ export type ExperienceModel = {
     introduction: string;
     coreCompetencies?: CompetencyModel[];
     experienceList: ExperienceListModel[];
+    certifications?: CertificateModel[];
 }
 
 export type CompetencyModel = {
@@ -21,4 +22,12 @@ export type CompetencyModel = {
     url: string;
     details?: string;
     category: string;
+}
+
+export type CertificateModel = {
+    id: number;
+    courseName: string;
+    institution: string;
+    details: string;
+    link?: string;
 }

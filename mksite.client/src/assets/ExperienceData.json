@@ -138,6 +138,28 @@
         "details": "Various development and DevOps tooling on cloud systems",
         "category": "Tool"
       }
+    ],
+    "certifications": [
+      {
+        "id": 1,
+        "courseName": "Power BI Essential Training",
+        "institution": "LinkedIn",
+        "details": "Learning the powerful toolset available through Power BI, including Desktop, Mobile, and Power BI Service.",
+        "link": "https://www.linkedin.com/learning/certificates/243d3b2a97395dbb8947742c776e9261dd523ab2f2ab3af4d60b95e1686ab602"
+      },
+      {
+        "id": 2,
+        "courseName": "Meta Front-End Professional Certificate",
+        "institution": "Meta (Coursera)",
+        "details": "Prepare for a career as a web developer through this course offered by Meta, exploring React, Figma, and other valuable tools.",
+        "link": "https://coursera.org/share/9ac001d6def13cb469261f4c819a84e8"
+      },
+      {
+        "id": 3,
+        "courseName": "Meta Back-End Professional Certificate",
+        "institution": "Meta (Coursera)",
+        "details": "In progress..."
+      }
     ]
   },
   "teaching": {
