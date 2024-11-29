@@ -38,8 +38,31 @@ type ExperienceProps = {
   type: string;
 };
 
-//TODO: fix styling
 //TODO: move the frames to another file
+const CertificateFrame = forwardRef(
+  (props: { certificates: CertificateModel[] }) => {
+    const { certificates } = props;
+    return certificates.map((certificate) => {
+      const { id, courseName, institution, details, link } = certificate;
+      return (
+        <a href={link} target='_blank' key={id}>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
+          >
+            <img
+              width="150px"
+              src={Certificate}
+              alt={`${courseName} completed from ${institution}`}
+            ></img>
+          </OverlayTrigger>
+          <p>{courseName} from {institution}</p>
+        </a>
+      );
+    });
+  }
+);
+
 const CompetencyFrame = forwardRef(
   (props: { competencies: CompetencyModel[] }) => {
     const { competencies } = props;
@@ -57,7 +80,7 @@ const CompetencyFrame = forwardRef(
     return competencies.map((competency) => {
       const { id, title, details } = competency;
       return (
-        <Container key={id} className={`${styles["competencyContainer"]}`}>
+        <Container key={id} >
           <OverlayTrigger
             placement="bottom"
             overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
@@ -174,10 +197,10 @@ export const ResumeFrame = (props: FrameProps) => {
               <Accordion.Header className={`${styles["accordionHeader"]}`}>
                 Certifications
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={`${styles["competencyContainer"]}`}>
                 {experience.certifications && (
                   <CertificateFrame
-                    certifications={experience.certifications}
+                    certificates={experience.certifications}
                   ></CertificateFrame>
                 )}
               </Accordion.Body>

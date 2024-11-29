@@ -29,5 +29,5 @@ export type CertificateModel = {
     courseName: string;
     institution: string;
     details: string;
-    link: string;
+    link?: string;
 }
