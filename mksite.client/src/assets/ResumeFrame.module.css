@@ -99,7 +99,11 @@ a {
 .competencyContainer p {
   max-width: 150px;
   font-size: small;
-  font-family: Consolas, monaco, monospace;;
+  font-family: Consolas, monaco, monospace;
+}
+
+.competencyContainer a {
+  text-decoration: underline !important;
 }
 
 .competencyContainer img {

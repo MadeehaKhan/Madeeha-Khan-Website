@@ -45,7 +45,7 @@ const CertificateFrame = forwardRef(
     return certificates.map((certificate) => {
       const { id, courseName, institution, details, link } = certificate;
       return (
-        <a href={link} target='_blank' key={id}>
+        <Container key={id}>
           <OverlayTrigger
             placement="bottom"
             overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
@@ -56,8 +56,8 @@ const CertificateFrame = forwardRef(
               alt={`${courseName} completed from ${institution}`}
             ></img>
           </OverlayTrigger>
-          <p>{courseName} from {institution}</p>
-        </a>
+          {link ? <p>{courseName} <a href={link} target='_blank' >from  {institution}</a> </p>: <p> {courseName} from {institution}</p>}
+        </Container>
       );
     });
   }
