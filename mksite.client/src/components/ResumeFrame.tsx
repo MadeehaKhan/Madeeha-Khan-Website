@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   Container,
   Row,
@@ -13,7 +14,7 @@ import {
   ExperienceModel,
 } from "../models/ExperienceModel";
 import styles from "../assets/ResumeFrame.module.css";
-import { forwardRef } from "react";
+import info from "../assets/info.json";
 import ReactLogo from "../assets/logos/React.svg";
 import AngularLogo from "../assets/logos/Angular.svg";
 import PythonLogo from "../assets/logos/Python.svg";
@@ -56,7 +57,7 @@ const CertificateFrame = forwardRef(
             ></img>
           </OverlayTrigger>
           <p>
-            {courseName}&nbsp;  
+            {courseName}&nbsp;
             {link ? (
               <a href={link} target="_blank">
                 from {institution}
@@ -159,7 +160,7 @@ const ExperienceFrame = (props: ExperienceProps) => {
       })}
       {props.type == "programming" && (
         <a
-          href="https://drive.google.com/file/d/1BXMgjkLGES2L7sbiwoFAgc_ILJ8ZTYSg/view?usp=sharing"
+          href={info.resume}
           target="_blank"
           className={`${styles["resume-link"]}`}
         >
