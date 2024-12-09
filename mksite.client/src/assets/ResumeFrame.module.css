@@ -26,6 +26,10 @@
   padding: 5px;
 }
 
+.experienceHeader a {
+text-decoration: underline !important;
+}
+
 .accordionHeader button {
   background-color: #6888b5c1 !important;
   color: #091943 !important;

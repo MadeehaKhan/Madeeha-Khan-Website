@@ -26,7 +26,6 @@ import NodeLogo from "../assets/logos/Node.svg";
 import Certificate from "../assets/Certificate.svg";
 
 //TODO: add user prompt to contact after viewing resume
-//TODO: add certificate stuff
 
 type FrameProps = {
   type: string;
@@ -56,7 +55,16 @@ const CertificateFrame = forwardRef(
               alt={`${courseName} completed from ${institution}`}
             ></img>
           </OverlayTrigger>
-          {link ? <p>{courseName} <a href={link} target='_blank' >from  {institution}</a> </p>: <p> {courseName} from {institution}</p>}
+          <p>
+            {courseName}&nbsp;  
+            {link ? (
+              <a href={link} target="_blank">
+                from {institution}
+              </a>
+            ) : (
+              `from ${institution}`
+            )}
+          </p>
         </Container>
       );
     });
@@ -80,7 +88,7 @@ const CompetencyFrame = forwardRef(
     return competencies.map((competency) => {
       const { id, title, details } = competency;
       return (
-        <Container key={id} >
+        <Container key={id}>
           <OverlayTrigger
             placement="bottom"
             overlay={<Tooltip id="tooltip-bottom">{details}</Tooltip>}
@@ -102,9 +110,13 @@ const ExperienceHeader = (props: { organization: string; link?: string }) => {
   const { organization, link } = props;
   return (
     <h5 className={`${styles["experienceHeader"]}`}>
-      <a href={link} target="_blank">
-        {organization}
-      </a>
+      {link ? (
+        <a href={link} target="_blank">
+          {organization}
+        </a>
+      ) : (
+        organization
+      )}
     </h5>
   );
 };

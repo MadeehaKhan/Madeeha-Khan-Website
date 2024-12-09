@@ -9,7 +9,7 @@
         "generalDescription": "Improving operations at a nonprofit organization enabling Muslim women to build and contribute to their communities.",
         "itemizedDescription": [
           "Managed the full project lifecycle from inception to fulfillment using Agile methodologies, ensuring timely delivery and alignment with business goals. Collaborating with cross-functional teams we reduced Being ME's project timelines by 15% and improved metrics like event attendance and team retention.",
-          "Led the design process for the new Being ME Toronto website as a marketing tool and more effective means of communication with the community Being ME serves."
+          "Led the design process for the new Being ME Toronto website as a marketing tool and more effective & accessible means of communication with the community Being ME serves."
         ]
       },
       {
@@ -19,7 +19,7 @@
         "duration": "July 2021 - Oct 2022",
         "generalDescription": "Providing specialized generative AI products for tax and legal experts.",
         "itemizedDescription": [
-          "Innovated features on Blue J's flagship L&E product, delivering a simple and intuitive UI experience for our users in L&E, in-house counsel, and HR.",
+          "Innovated features on Blue J's flagship L&E product, delivering a simple, accessible, and intuitive UI experience for our users in L&E, in-house counsel, and HR.",
           "Shipped a suite of powerful tools— enhancing case tracking, legal analysis, and annotation capabilities—  that aligned with market needs, leading to a measurable improvement in user retention."
         ],
         "link": "https://www.bluej.com/"
@@ -31,7 +31,7 @@
         "duration": "Jan 2020 - June 2021",
         "generalDescription": "Providing customers across 55 countries with IT services, consulting, and business solutions.",
         "itemizedDescription": [
-          "Led the UI Team in implementing the private & public customer intake processes for Bank of Montreal on the cloud through AWS; Improved user engagement by 20%.",
+          "Led the UI Team in implementing the private & public customer intake processes for Bank of Montreal on the cloud through AWS; Ensured WCAG 2.0 Level AA conformance & improved user engagement by 20%.",
           "Drove the migration of BMO's Customer Intake, overseeing project timelines, coordinating other developers, and tracking project progress using Agile methodologies"
         ],
         "link": "https://www.bmo.com/online/debitcards/registration/#/terms"
@@ -45,7 +45,7 @@
         "itemizedDescription": [
           "Conceptualized, pitched, planned, and implemented a personal prescription management system to help users to track their own health",
           "Implemented features to facilitate commuinication between patients and their immediate healthcare providers to maintain timeliness in recieving crucial care",
-          "This project will return!"
+          "This project leveraged machine learning through Microsoft's OCR to create an elegant and accessible solution to patient self-management."
         ],
         "link": "https://github.com/MadeehaKhan/Pillbox"
       },
@@ -67,7 +67,8 @@
         "duration": "Apr 2015 - Apr 2017",
         "generalDescription": "Developed libraries and delivered lessons to teach students grades 2-10 about the basics of Computer Science.",
         "itemizedDescription": [
-          "Developed a graphics library, minigames & template apps, and various other tools to aid in the McMaster CS Outreach research project"
+          "Developed a graphics library, minigames & template apps, and various other tools to aid in the McMaster CS Outreach research project",
+          "Created an accessible web interface for the CS Outreach team to ensure that our activities could be enjoyed and leveraged by all our students"
         ],
         "link": "http://outreach.mcmaster.ca/"
       }
