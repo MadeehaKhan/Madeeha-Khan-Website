@@ -149,7 +149,7 @@ const ExperienceFrame = (props: ExperienceProps) => {
             </dl>
             <div className={`${styles["description"]}`}>
               <p className={`${styles["genDescription"]}`}>
-                {generalDescription}
+                <b>{generalDescription}</b>
               </p>
               <Row className={`${styles["itemDescription"]}`}>
                 <ul>{itemizedDescription.map(ListItem)}</ul>

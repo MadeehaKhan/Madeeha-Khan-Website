@@ -9,7 +9,7 @@
         "generalDescription": "Improving operations at a nonprofit organization enabling Muslim women to build and contribute to their communities.",
         "itemizedDescription": [
           "Managed the full project lifecycle from inception to fulfillment using Agile methodologies, ensuring timely delivery and alignment with business goals." ,
-          "Collaborating with cross-functional teams we reduced Being ME's project timelines by 15% and improved metrics like event attendance and team retention.",
+          "Collaborating with cross-functional teams we reduced Being ME's project timelines by 15% and contributed to over $25K increase in revenue.",
           "Led the design process for the new Being ME Toronto website as a marketing tool and more effective & accessible means of communication with the community Being ME serves."
         ]
       },
@@ -33,7 +33,7 @@
         "generalDescription": "Providing customers across 55 countries with IT services, consulting, and business solutions.",
         "itemizedDescription": [
           "Led the UI Team in implementing the private & public customer intake processes for Bank of Montreal on the cloud through AWS; Ensured WCAG 2.0 Level AA conformance & improved user engagement by 20%.",
-          "Drove the migration of BMO's Customer Intake, overseeing project timelines, coordinating other developers, and tracking project progress using Agile methodologies"
+          "Drove the migration of BMO's Customer Intake, overseeing project timelines, coordinating other developers, and tracking project progress using Agile methodologies, leading to a 25% increase in efficiency & improved relations with our client"
         ],
         "link": "https://www.bmo.com/online/debitcards/registration/#/terms"
       },
@@ -44,7 +44,7 @@
         "duration": "Sept 2018 - Sept 2019",
         "generalDescription": "Mobile application providing users with an all-in-one tool to track and learn about their prescriptions.",
         "itemizedDescription": [
-          "Conceptualized, pitched, planned, and implemented a personal prescription management system to help users to track their own health",
+          "Conceptualized, pitched, planned, and implemented a personal prescription management system to help hundreds of users to track their own health",
           "Implemented features to facilitate commuinication between patients and their immediate healthcare providers to maintain timeliness in recieving crucial care",
           "This project leveraged machine learning through Microsoft's OCR to create an elegant and accessible solution to patient self-management."
         ],
@@ -153,13 +153,19 @@
         "id": 2,
         "courseName": "Meta Front-End Professional Certificate",
         "institution": "Meta (Coursera)",
-        "details": "Prepare for a career as a web developer through this course offered by Meta, exploring React, Figma, and other valuable tools.",
+        "details": "Sharpened my web developement skills through this course offered by Meta, exploring React, Figma, and other valuable tools.",
         "link": "https://coursera.org/share/9ac001d6def13cb469261f4c819a84e8"
       },
       {
         "id": 3,
         "courseName": "Meta Back-End Professional Certificate",
         "institution": "Meta (Coursera)",
+        "details": "In progress..."
+      },
+      {
+        "id": 4,
+        "courseName": "IBM Generative AI Engineering Professional Certificate",
+        "institution": "IBM (Coursera)",
         "details": "In progress..."
       }
     ]
