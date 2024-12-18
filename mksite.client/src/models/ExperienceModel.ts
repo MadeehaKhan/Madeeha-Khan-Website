@@ -30,4 +30,5 @@ export type CertificateModel = {
     institution: string;
     details: string;
     link?: string;
+    github?: string;
 }

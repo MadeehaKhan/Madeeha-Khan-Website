@@ -8,7 +8,7 @@
         "duration": "Nov 2022 - Aug 2024",
         "generalDescription": "Improving operations at a nonprofit organization enabling Muslim women to build and contribute to their communities.",
         "itemizedDescription": [
-          "Managed the full project lifecycle from inception to fulfillment using Agile methodologies, ensuring timely delivery and alignment with business goals." ,
+          "Managed the full project lifecycle from inception to fulfillment using Agile methodologies, ensuring timely delivery and alignment with business goals.",
           "Collaborating with cross-functional teams we reduced Being ME's project timelines by 15% and contributed to over $25K increase in revenue.",
           "Led the design process for the new Being ME Toronto website as a marketing tool and more effective & accessible means of communication with the community Being ME serves."
         ]
@@ -152,21 +152,22 @@
       {
         "id": 2,
         "courseName": "Meta Front-End Professional Certificate",
-        "institution": "Meta (Coursera)",
+        "institution": "Meta",
         "details": "Sharpened my web developement skills through this course offered by Meta, exploring React, Figma, and other valuable tools.",
         "link": "https://coursera.org/share/9ac001d6def13cb469261f4c819a84e8"
       },
       {
         "id": 3,
         "courseName": "Meta Back-End Professional Certificate",
-        "institution": "Meta (Coursera)",
+        "institution": "Meta",
         "details": "In progress..."
       },
       {
         "id": 4,
         "courseName": "IBM Generative AI Engineering Professional Certificate",
-        "institution": "IBM (Coursera)",
-        "details": "In progress..."
+        "institution": "IBM",
+        "details": "In progress...",
+        "github": "https://github.com/MadeehaKhan/IBM-Machine-Learning-with-Python"
       }
     ]
   },
