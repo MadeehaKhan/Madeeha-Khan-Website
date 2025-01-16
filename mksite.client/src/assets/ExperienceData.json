@@ -102,7 +102,7 @@
         "id": 4,
         "title": "Python",
         "url": "../assets/logos/Python.svg",
-        "details": "Python for backend with Flask and Django",
+        "details": "Python for backend with Flask, and for ML",
         "category": "Language"
       },
       {
@@ -167,7 +167,7 @@
         "courseName": "IBM Generative AI Engineering Professional Certificate",
         "institution": "IBM",
         "details": "In progress...",
-        "github": "https://github.com/MadeehaKhan/IBM-Machine-Learning-with-Python"
+        "github": "https://github.com/MadeehaKhan/IBM-Introduction-to-AI"
       }
     ]
   },

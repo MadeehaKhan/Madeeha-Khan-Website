@@ -7,7 +7,6 @@ import {
 } from "../models/ExperienceModel";
 import { ListItem } from "./SharedComponents";
 import styles from "../assets/ResumeFrame.module.css";
-import info from "../assets/info.json";
 import ReactLogo from "../assets/logos/React.svg";
 import AngularLogo from "../assets/logos/Angular.svg";
 import PythonLogo from "../assets/logos/Python.svg";
@@ -75,15 +74,6 @@ export const ExperienceFrame = (props: ExperienceProps) => {
           </Container>
         );
       })}
-      {props.type == "programming" && (
-        <a
-          href={info.resume}
-          target="_blank"
-          className={`${styles["resume-link"]}`}
-        >
-          <b>{`${"full resume here".toUpperCase()}`}</b>
-        </a>
-      )}
     </>
   );
 };
@@ -142,9 +132,14 @@ export const CertificateFrame = forwardRef(
             ></img>
           </OverlayTrigger>
           <p>
-            {github ? <a href={github} target="_blank">
+            {github ? (
+              <a href={github} target="_blank">
                 {courseName}
-              </a> :<> {courseName}</>}&nbsp;
+              </a>
+            ) : (
+              <> {courseName}</>
+            )}
+            &nbsp;
             {link ? (
               <a href={link} target="_blank">
                 from {institution}
