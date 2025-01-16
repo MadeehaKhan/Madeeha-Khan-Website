@@ -1,10 +1,13 @@
-import {
-  Container,
-  Row,
-  Accordion
-} from "react-bootstrap";
+import { Container, Row, Accordion } from "react-bootstrap";
 import { ExperienceModel } from "../models/ExperienceModel";
-import { ExperienceFrame, CertificateFrame, CompetencyFrame } from "./FrameComponents";
+import info from "../assets/info.json";
+import {
+  ExperienceFrame,
+  CertificateFrame,
+  CompetencyFrame,
+} from "./FrameComponents";
+
+import { WIP } from "../components/WIP";
 import styles from "../assets/ResumeFrame.module.css";
 
 //TODO: add user prompt to contact after viewing resume
@@ -24,6 +27,13 @@ export const ResumeFrame = (props: FrameProps) => {
             <Row className={`${styles["resumeHeader"]}`}>
               <h2>{experience.title}</h2>
               <p>{experience.introduction}</p>
+              <a
+                href={info.resume}
+                target="_blank"
+                className={`${styles["resume-link"]}`}
+              >
+                <b>{`${"full resume".toUpperCase()}`}</b>
+              </a>
             </Row>
             <Accordion.Item eventKey="0" className={`${styles["resumeItem"]}`}>
               <Accordion.Header className={`${styles["accordionHeader"]}`}>

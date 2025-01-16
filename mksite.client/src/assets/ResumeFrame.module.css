@@ -1,7 +1,10 @@
-
 .resumeHeader {
   font-family: Consolas, monaco, monospace;
   margin-bottom: 5px;
+}
+
+.resumeHeader p {
+  margin-bottom: 0px !important;
 }
 
 .resume-link {
@@ -27,7 +30,7 @@
 }
 
 .experienceHeader a {
-text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 .accordionHeader button {
